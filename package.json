@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "jest": {
-   "collectCoverageFrom": 
-   ["src /**/*.{js,jsx}", 
-    "!**/serviceWorker.js"]
+    "collectCoverageFrom": [
+      "src /**/*.{js,jsx}",
+      "!**/serviceWorker.js"
+    ]
   },
   "dependencies": {
     "node-sass": "^4.11.0",
