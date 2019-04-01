@@ -16,7 +16,14 @@ export class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-  } 
+    // add to global redux state
+    // into items array
+  }
+
+  renderItems = (item) => {
+    // map through to render global item array
+    return <p>{item}</p>
+  }
 
   render() {
     const { title, item } = this.state;
@@ -37,6 +44,8 @@ export class Form extends Component {
           onChange={this.handleChange}
         />
         <button>Add Item</button>
+        {/* add condition for global items array, if yes, renderItems */}
+        {this.renderItems()}
       </form>
     )
   }
