@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { addItem, addTitle } from '../actions';
+import { connect } from 'react-redux';
 
 export class Form extends Component {
   constructor() {
@@ -14,19 +16,32 @@ export class Form extends Component {
     this.setState({ [name]: value });
   }
 
+  // addIdea = (e) => {
+  //   const { value } = e.target;  
+  //   const { items } = this.props;
+  //   console.log(items)
+  //   // this.setState({ items: [...items, value] })  
+  // }
+
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.addTitle(this.state.title);
+    this.props.addItem(this.state.item);
     // add to global redux state
     // into items array
   }
 
-  renderItems = (item) => {
-    // map through to render global item array
-    return <p>{item}</p>
+  renderItems = () => {
+    const { items } = this.props;
+    console.log(this.props)
+    // return items.ideas.map(item => (
+    //   <p>{item}</p>
+    // ))
   }
 
   render() {
     const { title, item } = this.state;
+    const { items } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
         <input 
@@ -36,6 +51,9 @@ export class Form extends Component {
           name='title'
           onChange={this.handleChange}
         />
+        {items && 
+          this.renderItems()
+        }
         <input 
           type='text' 
           placeholder='Item...' 
@@ -45,10 +63,18 @@ export class Form extends Component {
         />
         <button>Add Item</button>
         {/* add condition for global items array, if yes, renderItems */}
-        {this.renderItems()}
       </form>
     )
   }
 }
 
-export default Form
+export const mapDispatchToProps = (dispatch) => ({
+  addItem: (items) => dispatch(addItem(items)),
+  addTitle: (title) => dispatch(addTitle(title))
+});
+
+export const mapStateToProps = (state) => ({
+  items: state.items
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

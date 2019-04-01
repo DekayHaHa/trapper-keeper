@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { ideasReducer } from './ideasReducer';
+import { items } from './items';
 
 export const rootReducer = combineReducers({
-  ideas: ideasReducer
+  items: items
 });
