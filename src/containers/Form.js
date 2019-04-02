@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { addItem, addTitle } from '../actions';
 import { connect } from 'react-redux';
 import { CompletedItem } from '../components/CompletedItem'
-import { UncompletedItem } from '../components/UncompletedItem'
+import { IncompleteItem } from '../components/IncompleteItem'
 
 export class Form extends Component {
   constructor() {
@@ -45,7 +45,7 @@ export class Form extends Component {
   renderItems = () => {
     return this.state.itemsList.map(item => {
       const checked = <CompletedItem {...item} toggle={this.toggleComplete} />;
-      const unchecked = <UncompletedItem {...item} toggle={this.toggleComplete} />;
+      const unchecked = <IncompleteItem {...item} toggle={this.toggleComplete} />;
       return item.isComplete ? unchecked : checked;
     });
   };
