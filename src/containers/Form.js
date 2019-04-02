@@ -7,7 +7,8 @@ export class Form extends Component {
     super();
     this.state = {
       title: '',
-      item: ''
+      item: '',
+      itemsList: []
     }
   }
 
@@ -16,32 +17,25 @@ export class Form extends Component {
     this.setState({ [name]: value });
   }
 
-  // addIdea = (e) => {
-  //   const { value } = e.target;  
-  //   const { items } = this.props;
-  //   console.log(items)
-  //   // this.setState({ items: [...items, value] })  
-  // }
+  addIdea = () => {
+    const { item, itemsList } = this.state
+    this.setState({
+      itemsList: [...itemsList, item],
+      item: ''
+    })
+    // this.setState({ items: [...items, value] })  
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addTitle(this.state.title);
-    this.props.addItem(this.state.item);
-    // add to global redux state
-    // into items array
+
+    // add card
   }
 
-  renderItems = () => {
-    const { items } = this.props;
-    console.log(this.props)
-    // return items.ideas.map(item => (
-    //   <p>{item}</p>
-    // ))
-  }
+  renderItems = () => this.state.itemsList.map(item => <p>{item}</p>)
 
   render() {
-    const { title, item } = this.state;
-    const { items } = this.props;
+    const { title, item, itemsList } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <input 
@@ -51,10 +45,10 @@ export class Form extends Component {
           name='title'
           onChange={this.handleChange}
         />
-        {items && 
+        {itemsList.length > 0 && 
           this.renderItems()
         }
-        <input 
+        <button onClick={this.addIdea}>+</button><input 
           type='text' 
           placeholder='Item...' 
           value={item}
