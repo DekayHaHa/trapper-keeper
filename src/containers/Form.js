@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { addItem, addTitle } from '../actions';
 import { connect } from 'react-redux';
+import { CompletedItem } from '../components/CompletedItem'
+import { IncompleteItem } from '../components/IncompleteItem'
 
 export class Form extends Component {
   constructor() {
@@ -19,43 +21,57 @@ export class Form extends Component {
 
   addIdea = () => {
     const { item, itemsList } = this.state
+    const newItem = { text: item, isComplete: false, id: Date.now() }
     this.setState({
-      itemsList: [...itemsList, item],
+      itemsList: [...itemsList, newItem],
       item: ''
     })
-    // this.setState({ items: [...items, value] })  
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    // add card
+    // add card to store with title and array of list item objects. see line 24
   }
 
-  renderItems = () => this.state.itemsList.map(item => <p>{item}</p>)
+  toggleComplete = (id) => {
+    const { itemsList } = this.state
+    const newItems = itemsList.map(item => {
+      return id === item.id ? { ...item, isComplete: !item.isComplete } : item
+    })
+    this.setState({ itemsList: newItems })
+  }
+
+  renderItems = () => {
+    return this.state.itemsList.map(item => {
+      const checked = <CompletedItem {...item} toggle={this.toggleComplete} />;
+      const unchecked = <IncompleteItem {...item} toggle={this.toggleComplete} />;
+      return item.isComplete ? unchecked : checked;
+    });
+  };
 
   render() {
     const { title, item, itemsList } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <input 
-          type='text' 
-          placeholder='Title...' 
+        <input
+          type='text'
+          placeholder='Title...'
           value={title}
           name='title'
           onChange={this.handleChange}
         />
-        {itemsList.length > 0 && 
+        {itemsList.length > 0 &&
           this.renderItems()
         }
-        <button onClick={this.addIdea}>+</button><input 
-          type='text' 
-          placeholder='Item...' 
+        <button onClick={this.addIdea}>+</button><input
+          type='text'
+          placeholder='Item...'
           value={item}
           name='item'
           onChange={this.handleChange}
         />
-        <button>Add Item</button>
+        <button onClick={this.handleSubmit}>Add Item</button>
         {/* add condition for global items array, if yes, renderItems */}
       </form>
     )
