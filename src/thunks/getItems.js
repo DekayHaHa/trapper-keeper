@@ -1,4 +1,4 @@
-import { fetchItems } from '../actions';
+import { fetchItems, hasError } from '../actions';
 
 export const getItems = (url) => {
   return async (dispatch) => {
@@ -10,7 +10,7 @@ export const getItems = (url) => {
       const data = await response.json();
       dispatch(fetchItems(data));
     } catch(error) {
-      console.log(error.message);
+      dispatch(hasError(error.message));
     }
   }
 }

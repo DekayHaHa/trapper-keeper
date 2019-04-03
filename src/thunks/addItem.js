@@ -1,3 +1,5 @@
+import { hasError } from '../actions';
+
 export const addItem = (url, options) => {
   return async (dispatch) => {
     try {
@@ -8,7 +10,7 @@ export const addItem = (url, options) => {
       const data = await response.json();
       console.log(data)
     } catch(error) {
-      console.log(error.message)
+      dispatch(hasError(error.message))
     }
   }
 }

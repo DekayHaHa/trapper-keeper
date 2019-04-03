@@ -11,4 +11,9 @@
 export const fetchItems = (items) => ({
   type: 'FETCH_ITEMS',
   items
-})
+});
+
+export const hasError = (message) => ({
+  type: 'HAS_ERROR',
+  message
+});
