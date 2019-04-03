@@ -8,8 +8,8 @@
 //   item
 // })
 
-export const fetchItems = (items) => ({
-  type: 'FETCH_ITEMS',
+export const setItems = (items) => ({
+  type: 'SET_ITEMS',
   items
 });
 

@@ -1,4 +1,4 @@
-import { fetchItems, hasError } from '../actions';
+import { setItems, hasError } from '../actions';
 
 export const getItems = (url) => {
   return async (dispatch) => {
@@ -8,7 +8,7 @@ export const getItems = (url) => {
         throw Error(response.statusText);
       }
       const data = await response.json();
-      dispatch(fetchItems(data));
+      dispatch(setItems(data));
     } catch(error) {
       dispatch(hasError(error.message));
     }
