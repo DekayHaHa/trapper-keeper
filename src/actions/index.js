@@ -8,8 +8,8 @@
 //   item
 // })
 
-export const setItems = (items) => ({
-  type: 'SET_ITEMS',
+export const setNotes = (items) => ({
+  type: 'SET_NOTES',
   items
 });
 

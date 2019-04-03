@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Form from './Form';
 import { connect } from 'react-redux';
-import { getItems } from '../thunks/getItems';
+import { getNotes } from '../thunks/getNotes';
 
 class App extends Component {
   componentDidMount() {
-    this.props.getItems('http://localhost:3001/api/notes');
+    this.props.getNotes();
   }
 
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  getItems: (items) => dispatch(getItems(items)),
+  getNotes: (items) => dispatch(getNotes(items)),
 });
 
 export default connect(null, mapDispatchToProps)(App);

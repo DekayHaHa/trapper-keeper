@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { addItem, addTitle } from '../actions';
-import { addItem } from '../thunks/addItem';
+import { addNote } from '../thunks/addNote';
 import { connect } from 'react-redux';
 import { CompletedItem } from '../components/CompletedItem'
 import { IncompleteItem } from '../components/IncompleteItem'
@@ -20,7 +20,7 @@ export class Form extends Component {
     this.setState({ [name]: value });
   }
 
-  addIdea = (e) => {
+  addNote = (e) => {
     e.preventDefault();
     const { item, itemsList } = this.state;
     const newItem = { text: item, isComplete: false, id: Date.now() };
@@ -33,14 +33,8 @@ export class Form extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { title, itemsList } = this.state;
-    const data = {title, itemsList};
-    this.props.addItem('http://localhost:3001/api/notes', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+    const data = { title, itemsList };
+    this.props.addNote(data);
   }
 
   toggleComplete = (id) => {
@@ -73,23 +67,21 @@ export class Form extends Component {
         {itemsList.length > 0 &&
           this.renderItems()
         }
-        <button onClick={this.addIdea}>+</button><input
+        <button onClick={this.addNote}>+</button><input
           type='text'
           placeholder='Item...'
           value={item}
           name='item'
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSubmit}>Add Item</button>
-        {/* add condition for global items array, if yes, renderItems */}
+        <button onClick={this.handleSubmit}>Save Note</button>
       </form>
     )
   }
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  addItem: (items) => dispatch(addItem(items)),
-  // addTitle: (title) => dispatch(addTitle(title))
+  addNote: (items) => dispatch(addNote(items))
 });
 
 // export const mapStateToProps = (state) => ({
