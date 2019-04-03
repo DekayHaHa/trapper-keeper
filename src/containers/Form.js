@@ -35,6 +35,7 @@ export class Form extends Component {
     const { title, itemsList } = this.state;
     const data = { title, itemsList };
     this.props.addNote(data);
+    this.setState({ itemsList: [], title: '' })
   }
 
   toggleComplete = (id) => {
