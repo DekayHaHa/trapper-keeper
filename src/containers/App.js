@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Form from './Form';
 import { connect } from 'react-redux';
+import { Header } from '../components/Header';
 import { getNotes } from '../thunks/getNotes';
+import Form from './Form';
 
 class App extends Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Keeper</h1>
+        <Header />
         <Form />
       </div>
     );
