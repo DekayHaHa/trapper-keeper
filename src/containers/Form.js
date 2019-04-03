@@ -34,6 +34,7 @@ export class Form extends Component {
     e.preventDefault();
     const { title, itemsList } = this.state;
     const data = { title, itemsList };
+    console.log(data);
     this.props.addNote(data);
   }
 
@@ -81,7 +82,7 @@ export class Form extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  addNote: (items) => dispatch(addNote(items))
+  addNote: (item) => dispatch(addNote(item))
 });
 
 // export const mapStateToProps = (state) => ({
