@@ -8,9 +8,9 @@
 //   item
 // })
 
-export const setNotes = (items) => ({
+export const setNotes = (notes) => ({
   type: 'SET_NOTES',
-  items
+  notes
 });
 
 export const hasError = (message) => ({
