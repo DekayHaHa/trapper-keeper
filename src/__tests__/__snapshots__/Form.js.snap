@@ -28,18 +28,9 @@ ShallowWrapper {
           type="text"
           value=""
         />,
-        false,
-        <button
-          onClick={[Function]}
-        >
-          +
-        </button>,
-        <input
-          name="item"
-          onChange={[Function]}
-          placeholder="Item..."
-          type="text"
-          value=""
+        Array [],
+        <ItemInput
+          addListItem={[Function]}
         />,
         <button
           onClick={[Function]}
@@ -65,33 +56,16 @@ ShallowWrapper {
         "rendered": null,
         "type": "input",
       },
-      false,
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "children": "+",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "+",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "name": "item",
-          "onChange": [Function],
-          "placeholder": "Item...",
-          "type": "text",
-          "value": "",
+          "addListItem": [Function],
         },
         "ref": null,
         "rendered": null,
-        "type": "input",
+        "type": [Function],
       },
       Object {
         "instance": null,
@@ -122,18 +96,9 @@ ShallowWrapper {
             type="text"
             value=""
           />,
-          false,
-          <button
-            onClick={[Function]}
-          >
-            +
-          </button>,
-          <input
-            name="item"
-            onChange={[Function]}
-            placeholder="Item..."
-            type="text"
-            value=""
+          Array [],
+          <ItemInput
+            addListItem={[Function]}
           />,
           <button
             onClick={[Function]}
@@ -159,33 +124,16 @@ ShallowWrapper {
           "rendered": null,
           "type": "input",
         },
-        false,
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": "+",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "+",
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "name": "item",
-            "onChange": [Function],
-            "placeholder": "Item...",
-            "type": "text",
-            "value": "",
+            "addListItem": [Function],
           },
           "ref": null,
           "rendered": null,
-          "type": "input",
+          "type": [Function],
         },
         Object {
           "instance": null,

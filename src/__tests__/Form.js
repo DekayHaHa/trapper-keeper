@@ -22,7 +22,7 @@ describe('Form', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    it.only('calls dispatch with a addNote action', async () => {
+    it('calls dispatch with a addNote action', async () => {
       const mockDispatch = jest.fn();
       const mockItem = {title: "title", itemsList: []}
       const actionToDispatch = addNote(mockItem);
