@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 
 export class ItemInput extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			item: ''
+			text: '',
+			isComplete: false,
+			id: 0
 		};
+	}
+
+	componentWillMount() {
+		const { text, isComplete, id } = this.props
+		if (this.props.text) {
+			console.log(this.props)
+			this.setState({ text, isComplete, id })
+		}
 	}
 
 	handleChange = e => {
@@ -14,15 +24,19 @@ export class ItemInput extends Component {
 	}
 
 	sendListItem = () => {
-		this.props.addListItem(this.state.item)
-		this.setState({ item: '' })
+		const { addListItem, updateItem } = this.props
+		if (addListItem) {
+			addListItem(this.state.text)
+			this.setState({ text: '' })
+		} else {
+			updateItem(this.state)
+		}
 	}
 
 	render() {
 		return (
 			<div>
-				<button onClick={this.sendListItem}>+</button>
-				<input type='text' name='item' value={this.state.item} onChange={this.handleChange} placeholder='item...' />
+				<input type='text' name='text' value={this.state.text} onBlur={this.sendListItem} onChange={this.handleChange} placeholder='item...' />
 			</div>
 		);
 	}

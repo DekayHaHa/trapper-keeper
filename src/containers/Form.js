@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-// import { addItem, addTitle } from '../actions';
 import { addNote } from '../thunks/addNote';
 import { connect } from 'react-redux';
-import { CompletedItem } from '../components/CompletedItem'
-import { IncompleteItem } from '../components/IncompleteItem'
+import { ItemInput } from './ItemInput'
 
 export class Form extends Component {
   constructor() {
     super();
     this.state = {
       title: '',
-      item: '',
       itemsList: []
     }
   }
@@ -20,14 +17,15 @@ export class Form extends Component {
     this.setState({ [name]: value });
   }
 
-  addListItem = (e) => {
-    e.preventDefault();
-    const { item, itemsList } = this.state;
-    const newItem = { text: item, isComplete: false, id: Date.now() };
-    this.setState({
-      itemsList: [...itemsList, newItem],
-      item: ''
-    });
+  addListItem = (text) => {
+    const { itemsList } = this.state;
+    if (text) {
+      const newItem = { text, isComplete: false, id: Date.now() };
+      this.setState({
+        itemsList: [...itemsList, newItem],
+        item: ''
+      });
+    }
   }
 
   handleSubmit = (e) => {
@@ -46,16 +44,23 @@ export class Form extends Component {
     this.setState({ itemsList: newItems });
   }
 
+  updateItem = (item) => {
+    const { itemsList } = this.state;
+
+    const newItems = itemsList.map(val => {
+      return item.id === val.id ? { ...item } : val
+    });
+    this.setState({ itemsList: newItems.filter(val => val.text) });
+  }
+
   renderItems = () => {
-    return this.state.itemsList.map((item, i) => {
-      const checked = <CompletedItem key={i} {...item} toggle={this.toggleComplete} />;
-      const unchecked = <IncompleteItem key={i} {...item} toggle={this.toggleComplete} />;
-      return item.isComplete ? unchecked : checked;
+    return this.state.itemsList.map((item) => {
+      return <ItemInput key={item.id} {...item} toggle={this.toggleComplete} updateItem={this.updateItem} />;
     });
   };
 
   render() {
-    const { title, item, itemsList } = this.state;
+    const { title } = this.state;
     return (
       <form>
         <input
@@ -65,16 +70,17 @@ export class Form extends Component {
           name='title'
           onChange={this.handleChange}
         />
-        {itemsList.length > 0 &&
+        {
           this.renderItems()
         }
-        <button onClick={this.addListItem}>+</button><input
+        <ItemInput addListItem={this.addListItem} />
+        {/* <input
           type='text'
           placeholder='Item...'
           value={item}
           name='item'
           onChange={this.handleChange}
-        />
+        /> */}
         <button onClick={this.handleSubmit}>Save Note</button>
       </form>
     )
