@@ -1,13 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IncompleteItem should match snapshot with all data passed in 1`] = `
+exports[`Header should match snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <IncompleteItem
-    id={2}
-    text="text"
-    toggle={[MockFunction]}
-  />,
+  Symbol(enzyme.__unrendered__): <Header />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -23,17 +19,17 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <p
-          className="completed-item"
+        <h1>
+          Task Mancer
+        </h1>,
+        <Link
+          className="new-note-btn"
+          to="/api/new-note"
         >
-          text
-        </p>,
-        <button
-          onClick={[Function]}
-        >
-          Uncheck
-        </button>,
+          <Connect(CreateNote) />
+        </Link>,
       ],
+      "className": "header-container",
     },
     "ref": null,
     "rendered": Array [
@@ -42,27 +38,35 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "text",
-          "className": "completed-item",
+          "children": "Task Mancer",
         },
         "ref": null,
-        "rendered": "text",
-        "type": "p",
+        "rendered": "Task Mancer",
+        "type": "h1",
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "children": "Uncheck",
-          "onClick": [Function],
+          "children": <Connect(CreateNote) />,
+          "className": "new-note-btn",
+          "to": "/api/new-note",
         },
         "ref": null,
-        "rendered": "Uncheck",
-        "type": "button",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
       },
     ],
-    "type": "div",
+    "type": "header",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -71,17 +75,17 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <p
-            className="completed-item"
+          <h1>
+            Task Mancer
+          </h1>,
+          <Link
+            className="new-note-btn"
+            to="/api/new-note"
           >
-            text
-          </p>,
-          <button
-            onClick={[Function]}
-          >
-            Uncheck
-          </button>,
+            <Connect(CreateNote) />
+          </Link>,
         ],
+        "className": "header-container",
       },
       "ref": null,
       "rendered": Array [
@@ -90,27 +94,35 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "text",
-            "className": "completed-item",
+            "children": "Task Mancer",
           },
           "ref": null,
-          "rendered": "text",
-          "type": "p",
+          "rendered": "Task Mancer",
+          "type": "h1",
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": "Uncheck",
-            "onClick": [Function],
+            "children": <Connect(CreateNote) />,
+            "className": "new-note-btn",
+            "to": "/api/new-note",
           },
           "ref": null,
-          "rendered": "Uncheck",
-          "type": "button",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
         },
       ],
-      "type": "div",
+      "type": "header",
     },
   ],
   Symbol(enzyme.__options__): Object {

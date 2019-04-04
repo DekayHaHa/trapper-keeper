@@ -9,7 +9,7 @@ describe('notes', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should return a category to global state', () => {
+  it('should return an array to global state for setNotes', () => {
     const action = actions.setNotes(['note', 'note']);
     const initialState = [];
     const expected = ['note', 'note'];
@@ -17,4 +17,13 @@ describe('notes', () => {
     const result = notes(initialState, action);
     expect(result).toEqual(expected);
   });
+
+  it('if action is removeNote, it should return a shortened array to global state', () => {
+    const action = actions.removeNote(2);
+    const initialState = [{id: 1, title: 'note'}, {id: 2, title: 'note'}];
+    const expected = [{id: 1, title: 'note'}];
+
+    const result = notes(initialState, action);
+    expect(result).toEqual(expected);
+  })
 });

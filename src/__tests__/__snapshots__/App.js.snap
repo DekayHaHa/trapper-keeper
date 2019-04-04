@@ -33,19 +33,24 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header />,
+        <Route
+          component={[Function]}
+          path="/"
+        />,
         <Connect(Form) />,
         <Connect(NotesContainer) />,
       ],
-      "className": "App",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -78,19 +83,24 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header />,
+          <Route
+            component={[Function]}
+            path="/"
+          />,
           <Connect(Form) />,
           <Connect(NotesContainer) />,
         ],
-        "className": "App",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
