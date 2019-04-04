@@ -1,4 +1,4 @@
-import { hasError, removeNote } from "../actions";
+import { hasError, removeNote } from '../actions';
 
 export const deleteNote = (id) => {
   const option = {
