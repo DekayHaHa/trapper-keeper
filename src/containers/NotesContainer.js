@@ -6,7 +6,7 @@ import { Note } from '../components/Note';
 export class NotesContainer extends Component {
   renderNotes = () => {
     const { notes } = this.props;
-    return notes.map(note => <Note {...note}/>)
+    return notes.map(note => <Note key={note.id} {...note} />)
   }
 
   render() {

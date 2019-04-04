@@ -20,7 +20,7 @@ export class Form extends Component {
     this.setState({ [name]: value });
   }
 
-  addNote = (e) => {
+  addListItem = (e) => {
     e.preventDefault();
     const { item, itemsList } = this.state;
     const newItem = { text: item, isComplete: false, id: Date.now() };
@@ -36,6 +36,7 @@ export class Form extends Component {
     const data = { title, itemsList };
     console.log(data);
     this.props.addNote(data);
+    this.setState({ itemsList: [], title: '' })
   }
 
   toggleComplete = (id) => {
@@ -47,9 +48,9 @@ export class Form extends Component {
   }
 
   renderItems = () => {
-    return this.state.itemsList.map(item => {
-      const checked = <CompletedItem {...item} toggle={this.toggleComplete} />;
-      const unchecked = <IncompleteItem {...item} toggle={this.toggleComplete} />;
+    return this.state.itemsList.map((item, i) => {
+      const checked = <CompletedItem key={i} {...item} toggle={this.toggleComplete} />;
+      const unchecked = <IncompleteItem key={i} {...item} toggle={this.toggleComplete} />;
       return item.isComplete ? unchecked : checked;
     });
   };
@@ -68,7 +69,7 @@ export class Form extends Component {
         {itemsList.length > 0 &&
           this.renderItems()
         }
-        <button onClick={this.addNote}>+</button><input
+        <button onClick={this.addListItem}>+</button><input
           type='text'
           placeholder='Item...'
           value={item}
