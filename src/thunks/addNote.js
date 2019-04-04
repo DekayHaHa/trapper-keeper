@@ -3,10 +3,10 @@ import { getNotes } from './getNotes';
 
 export const addNote = (data) => {
   const option = {
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     }
   }
   const url = 'http://localhost:3001/api/notes'
@@ -16,7 +16,6 @@ export const addNote = (data) => {
       if(!response.ok) {
         throw Error(response.statusText);
       }
-      await response.json();
       dispatch(getNotes());
     } catch(error) {
       dispatch(hasError(error.message))

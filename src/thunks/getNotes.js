@@ -1,7 +1,6 @@
 import { setNotes, hasError } from '../actions';
 
 export const getNotes = () => {
-  console.log('in get')
   return async (dispatch) => {
     try {
       const response = await fetch('http://localhost:3001/api/notes');
