@@ -12,3 +12,13 @@ export const removeNote = (id) => ({
   type: 'REMOVE_NOTE',
   id
 });
+
+export const setLoading = isLoading => ({
+  type: 'SET_LOADING',
+  isLoading
+});
+
+export const newNote = newNote => ({
+  type: 'NEW_NOTE',
+  newNote
+});
