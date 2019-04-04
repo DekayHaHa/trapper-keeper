@@ -5,13 +5,12 @@ import { getNotes } from '../thunks/getNotes';
 import Form from './Form';
 import NotesContainer from './NotesContainer';
 
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     this.props.getNotes();
   }
   
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         <Header />
@@ -23,7 +22,7 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  getNotes: (items) => dispatch(getNotes(items)),
+  getNotes: () => dispatch(getNotes()),
 });
 
 export const mapStateToProps = state => ({
