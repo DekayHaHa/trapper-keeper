@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Note } from '../components/Note';
+import Note from '../components/Note';
 
 
 export class NotesContainer extends Component {
   renderNotes = () => {
     const { notes } = this.props;
-    return notes.map(note => <Note key={note.id} {...note} />)
+    return this.props.notes.length > 0 
+      ? notes.map(note => <Note key={note.id} {...note} />) 
+      : <p>notes</p>
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         {this.renderNotes()}

@@ -6,27 +6,27 @@ import Form from './Form';
 import NotesContainer from './NotesContainer';
 
 export class App extends Component {
-  componentDidMount() {
-    this.props.getNotes();
-  }
+	componentDidMount() {
+		this.props.getNotes();
+	}
   
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Form />
-        <NotesContainer/>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="App">
+				<Header />
+				<Form />
+				<NotesContainer/>
+			</div>
+		);
+	}
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  getNotes: () => dispatch(getNotes()),
+	getNotes: () => dispatch(getNotes())
 });
 
 export const mapStateToProps = state => ({
-  notes: state.notes
-})
+	notes: state.notes
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

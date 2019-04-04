@@ -1,7 +1,6 @@
 import { hasError } from '../actions';
 import { getNotes } from './getNotes';
 
-// ADD NOTE
 export const addNote = (data) => {
   const option = {
     method: "POST",
