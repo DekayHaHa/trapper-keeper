@@ -2,12 +2,6 @@
   "name": "trapper-keeper",
   "version": "0.1.0",
   "private": true,
-  "jest": {
-    "collectCoverageFrom": [
-      "src /**/*.{js,jsx}",
-      "!**/serviceWorker.js"
-    ]
-  },
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "node-sass": "^4.11.0",
