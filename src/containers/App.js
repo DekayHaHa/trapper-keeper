@@ -20,14 +20,19 @@ export class App extends Component {
   // }
 
 	render() {
-		return (
-			<Route exact path='/' render={() => (
-				<div className="App">
-					<Header />
-					<Form />
-					<NotesContainer/>
-				</div>
-      )}/>
+    return (
+      <div>
+        <Route path='/' component={Header} />
+        <Form />
+        <NotesContainer />
+      </div>
+			// <Route exact path='/' render={() => (
+			// 	<div className="App">
+			// 		<Header />
+			// 		<Form />
+			// 		<NotesContainer/>
+			// 	</div>
+      // )}/>
 		);
 	}
 }
