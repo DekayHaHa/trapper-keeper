@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { addNote } from '../thunks/addNote';
-import { ItemInput } from './ItemInput';
+import { ItemTextField } from './ItemTextField';
 import { Dialog, DialogTitle, DialogActions, Tooltip, TextField, Button } from '@material-ui/core';
 
 export class CreateNote extends Component {
@@ -9,12 +9,10 @@ export class CreateNote extends Component {
         super();
         this.state = {
             title: '',
-            item: '',
             itemsList: [],
             open: false
         };
     }
-
 
     // appendNewItem = () => {
     //     const { item } = this.state;
@@ -47,7 +45,7 @@ export class CreateNote extends Component {
         const data = { title, itemsList };
         console.log(data);
         this.props.addNote(data);
-        this.setState({ itemsList: [], title: '' })
+        this.setState({ itemsList: [], title: '', open: false })
     }
 
     toggleComplete = (id) => {
@@ -69,7 +67,7 @@ export class CreateNote extends Component {
 
     renderItems = () => {
         return this.state.itemsList.map((item) => {
-            return <ItemInput key={item.id} {...item} toggle={this.toggleComplete} updateItem={this.updateItem} />;
+            return <ItemTextField key={item.id} {...item} toggle={this.toggleComplete} updateItem={this.updateItem} />;
         });
     };
 
@@ -92,7 +90,11 @@ export class CreateNote extends Component {
                 <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title" transitionDuration={800}>
                     <DialogTitle>
                         <TextField autoFocus margin="dense" id="title" label="Title" type="text" name='title' onChange={this.handleChange} fullWidth />
-                        <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='item' onChange={this.handleChange} fullWidth />
+                        {
+                            this.renderItems()
+                        }
+                        <ItemTextField addListItem={this.addListItem} />
+                        {/* <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='item' onChange={this.handleChange} fullWidth /> */}
                         {/* <div>{this.appendNewItem()}</div> */}
                     </DialogTitle>
                     <DialogActions>
