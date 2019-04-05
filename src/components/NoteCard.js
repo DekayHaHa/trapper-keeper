@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card, Tooltip, IconButton, CardContent, CardHeader } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
@@ -9,30 +9,34 @@ import { deleteNote } from '../thunks/deleteNote';
 
 class NoteCard extends Component {
 
+    passNoteId = () => {
+
+    }
+
     render() {
         const { note, classes, deleteNote } = this.props;
         console.log('note card props: ', this.props.note)
-      return (
-        <Tooltip title='Edit Note' placement='bottom' enterDelay={500}>
-            <Card className={classes.card}>
-                <Link to='/' className={classes.delete}>
-                    <Tooltip title='Delete Note'>
-                    <IconButton onClick={() => deleteNote(note.id)}>
-                        <Icon>delete</Icon>
-                    </IconButton>
-                    </Tooltip>
-                </Link>
-                <Link to={`/api/notes/${note.id}`} className={classes.link}>
-                    <CardHeader title={note.title} classes={{ title: classes.title }} />
-                    <CardContent>
-                        <ul>
-                            <NoteItems noteItems={note.itemsList} />
-                        </ul>
-                    </CardContent>
-                  </Link>
-            </Card>
-        </Tooltip>
-      )
+        return (
+            <Tooltip title='Edit Note' placement='bottom' enterDelay={500}>
+                <Card className={classes.card}>
+                    <Link to='/' className={classes.delete}>
+                        <Tooltip title='Delete Note'>
+                            <IconButton onClick={() => deleteNote(note.id)}>
+                                <Icon>delete</Icon>
+                            </IconButton>
+                        </Tooltip>
+                    </Link>
+                    <Link to={`/api/notes/${note.id}`} className={classes.link}>
+                        <CardHeader title={note.title} classes={{ title: classes.title }} />
+                        <CardContent>
+                            <ul>
+                                <NoteItems noteItems={note.itemsList} />
+                            </ul>
+                        </CardContent>
+                    </Link>
+                </Card>
+            </Tooltip>
+        )
     }
 }
 
@@ -55,7 +59,7 @@ const styles = {
 };
 
 export const mapDispatchToProps = (dispatch) => ({
-	deleteNote: (id) => dispatch(deleteNote(id))
+    deleteNote: (id) => dispatch(deleteNote(id))
 });
 
 export default withStyles(styles)(connect(null, mapDispatchToProps)(NoteCard));
