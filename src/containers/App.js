@@ -25,7 +25,7 @@ export class App extends Component {
     return (
       <div>
         <Route path='/' component={Header} />
-        <Route path='/api/notes' component={NotesContainer} />
+        <Route exact path='/' component={NotesContainer} />
         <Route exact path='/api/notes/:id' render={({ match }) => {
           const note = this.findNote(match)
           return note || <PageNotFound />

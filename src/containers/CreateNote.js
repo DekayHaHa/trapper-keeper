@@ -47,10 +47,14 @@ export class CreateNote extends Component {
         const data = { title, itemsList };
         if (edit) {
             changeNote({ id, title, itemsList });
-            this.setState({ itemsList: [], title: '', open: false, redirect: true })
+            this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
+                this.setState({ redirect: false })
+            })
         } else {
             addNote(data);
-            this.setState({ itemsList: [], title: '', open: false, redirect: true })
+            this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
+                this.setState({ redirect: false })
+            })
         }
     }
 
@@ -74,7 +78,7 @@ export class CreateNote extends Component {
     checkRedirect = () => {
         const { redirect, open } = this.state
         if (!open && redirect) {
-            return <Redirect to="/api/notes" />
+            return <Redirect to='/' />
         }
     }
 
