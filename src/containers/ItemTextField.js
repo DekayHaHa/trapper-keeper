@@ -38,7 +38,7 @@ export class ItemTextField extends Component {
     render() {
         const { text } = this.state;
         return (
-            <div>
+            <div> 
                 <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} fullWidth />
             </div>
         );

@@ -80,26 +80,23 @@ export class CreateNote extends Component {
     };
 
     render() {
-        const { open, title, item } = this.state;
+        const { open } = this.state;
 
         return (
             <div>
                 <Tooltip title='Create Note' placement='bottom'>
                     <Button color="primary" onClick={this.handleClickOpen}><span className='add-note-btn'>+</span></Button>
                 </Tooltip>
-                <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title" transitionDuration={800}>
+                <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title" transitionDuration={800} className='dialog-box'>
                     <DialogTitle>
                         <TextField autoFocus margin="dense" id="title" label="Title" type="text" name='title' onChange={this.handleChange} fullWidth />
                         {
                             this.renderItems()
                         }
                         <ItemTextField addListItem={this.addListItem} />
-                        {/* <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='item' onChange={this.handleChange} fullWidth /> */}
-                        {/* <div>{this.appendNewItem()}</div> */}
                     </DialogTitle>
                     <DialogActions>
                         <form>
-                            {/* <Button onClick={this.addNote} color="primary">Cancel</Button> */}
                             <Button type='submit' onClick={this.handleSubmit} color="primary">Save Note</Button>
                         </form>
                     </DialogActions>

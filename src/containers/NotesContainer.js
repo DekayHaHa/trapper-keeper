@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Note from '../components/Note';
+import NoteCard from '../components/NoteCard';
+import { Grid } from '@material-ui/core';
 
 
 export class NotesContainer extends Component {
-  renderNotes = () => {
-    const { notes } = this.props;
-    return this.props.notes.length > 0 
-      ? notes.map(note => <Note key={note.id} {...note} />) 
-      : <p>notes</p>
-  }
 
   render() {
+    const { notes } = this.props;
+    console.log('notes container: ', notes)
+    const renderNotes = notes.map(note => (
+      <Grid key={Date.now()} item xs={12} sm={6} md={4} lg={2}>
+        <NoteCard key={note.id} note={note} title={this.props.title} deleteNote={this.deleteNote} />
+      </Grid>
+    ));
     return (
-      <div>
-        {this.renderNotes()}
-      </div>
+      <Grid container justify='flex-start' alignItems='center'>
+        {renderNotes}
+      </Grid>
     )
   }
 }

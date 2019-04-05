@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Header } from '../components/Header';
 import { getNotes } from '../thunks/getNotes';
-import Form from './Form';
+// import Form from './Form';
 import NotesContainer from './NotesContainer';
 import { Route } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ export class App extends Component {
     return (
       <div>
         <Route path='/' component={Header} />
-        <Form />
+        {/* <Form /> */}
         <NotesContainer />
       </div>
 			// <Route exact path='/' render={() => (
