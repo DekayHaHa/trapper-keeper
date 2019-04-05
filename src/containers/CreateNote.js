@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { addNote } from '../thunks/addNote';
 import { ItemTextField } from './ItemTextField';
 import { Dialog, DialogTitle, DialogActions, Tooltip, TextField, Button } from '@material-ui/core';
+import { changeNote } from '../thunks/changeNote';
+import { Redirect } from 'react-router-dom'
 
 export class CreateNote extends Component {
     constructor() {
@@ -10,18 +12,17 @@ export class CreateNote extends Component {
         this.state = {
             title: '',
             itemsList: [],
-            open: false
+            open: false,
+            redirect: false
         };
     }
 
-    // appendNewItem = () => {
-    //     const { item } = this.state;
-    //     if (item) {
-    //         console.log('item:', item)
-    //         return (<TextField autoFocus='false' margin="dense" id="item" label="Item" type="text" name='item' onChange={this.handleChange} fullWidth />)
-    //     }
-    //     // Figure out removing auto focus on new input field
-    // }
+    componentWillMount() {
+        const { title, itemsList } = this.props;
+        if (title) {
+            this.setState({ title, itemsList, open: true })
+        }
+    }
 
     handleChange = (e) => {
         const { value, name } = e.target;
@@ -42,10 +43,15 @@ export class CreateNote extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const { title, itemsList } = this.state;
+        const { edit, changeNote, addNote, id } = this.props;
         const data = { title, itemsList };
-        console.log(data);
-        this.props.addNote(data);
-        this.setState({ itemsList: [], title: '', open: false })
+        if (edit) {
+            changeNote({ id, title, itemsList });
+            this.setState({ itemsList: [], title: '', open: false, redirect: true })
+        } else {
+            addNote(data);
+            this.setState({ itemsList: [], title: '', open: false, redirect: true })
+        }
     }
 
     toggleComplete = (id) => {
@@ -65,6 +71,13 @@ export class CreateNote extends Component {
         this.setState({ itemsList: newItems.filter(val => val.text) });
     }
 
+    checkRedirect = () => {
+        const { redirect, open } = this.state
+        if (!open && redirect) {
+            return <Redirect to="/api/notes" />
+        }
+    }
+
     renderItems = () => {
         return this.state.itemsList.map((item) => {
             return <ItemTextField key={item.id} {...item} toggle={this.toggleComplete} updateItem={this.updateItem} />;
@@ -80,16 +93,17 @@ export class CreateNote extends Component {
     };
 
     render() {
-        const { open } = this.state;
+        const { open, title } = this.state;
 
         return (
             <div>
+                {this.checkRedirect()}
                 <Tooltip title='Create Note' placement='bottom'>
                     <Button color="primary" onClick={this.handleClickOpen}><span className='add-note-btn'>+</span></Button>
                 </Tooltip>
                 <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title" transitionDuration={800} className='dialog-box'>
                     <DialogTitle>
-                        <TextField autoFocus margin="dense" id="title" label="Title" type="text" name='title' onChange={this.handleChange} fullWidth />
+                        <TextField autoFocus margin="dense" id="title" label="Title" type="text" name='title' value={title} onChange={this.handleChange} fullWidth />
                         {
                             this.renderItems()
                         }
@@ -107,7 +121,8 @@ export class CreateNote extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-    addNote: (newNote) => dispatch(addNote(newNote))
+    addNote: (newNote) => dispatch(addNote(newNote)),
+    changeNote: (note) => dispatch(changeNote(note))
 });
 
 export default connect(null, mapDispatchToProps)(CreateNote);

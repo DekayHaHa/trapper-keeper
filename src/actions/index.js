@@ -22,3 +22,8 @@ export const newNote = newNote => ({
   type: 'NEW_NOTE',
   newNote
 });
+
+export const editNote = note => ({
+  type: 'EDIT_NOTE',
+  note
+})
