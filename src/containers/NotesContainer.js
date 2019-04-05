@@ -6,12 +6,11 @@ export class NotesContainer extends Component {
 
   render() {
     const { notes } = this.props;
-    console.log('notes container: ', notes)
     const renderNotes = notes.map(note => (
       <NoteCard key={note.id} note={note} title={this.props.title} deleteNote={this.deleteNote} />
     ));
     return (
-      <div>
+      <div className='notes-container'>
         {renderNotes}
       </div>
     )

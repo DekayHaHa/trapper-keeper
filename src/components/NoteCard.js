@@ -41,7 +41,9 @@ const styles = {
         textDecoration: 'none'
     },
     card: {
-        margin: 12
+        margin: 12,
+        minWidth: 275,
+        display: 'inline-block'
     },
     title: {
         color: '#515151'
