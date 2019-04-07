@@ -18,7 +18,7 @@ export class App extends Component {
     const { id } = match.params;
     console.log('match params: ', id);
     const note = notes.find(note => note.id === id);
-    return <CreateNote edit={true} {...note} />
+    return note ? <CreateNote edit={true} {...note} /> : <PageNotFound />
   }
 
   render() {
@@ -27,8 +27,7 @@ export class App extends Component {
         <Route path='/' component={Header} />
         <Route exact path='/' component={NotesContainer} />
         <Route exact path='/api/notes/:id' render={({ match }) => {
-          const note = this.findNote(match)
-          return note || <PageNotFound />
+          return this.findNote(match)
         }} />
       </div>
       // <Route exact path='/' render={() => (
