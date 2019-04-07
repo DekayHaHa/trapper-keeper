@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { getNotes } from '../thunks/getNotes';
 // import Form from './Form';
 import NotesContainer from './NotesContainer';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import CreateNote from '../containers/CreateNote'
 import { PageNotFound } from '../components/PageNotFound';
 
@@ -16,7 +16,6 @@ export class App extends Component {
   findNote = (match) => {
     const { notes } = this.props;
     const { id } = match.params;
-    console.log('match params: ', id);
     const note = notes.find(note => note.id === id);
     return note ? <CreateNote edit={true} {...note} /> : <PageNotFound />
   }
@@ -25,18 +24,15 @@ export class App extends Component {
     return (
       <div>
         <Route path='/' component={Header} />
-        <Route exact path='/' component={NotesContainer} />
-        <Route exact path='/api/notes/:id' render={({ match }) => {
-          return this.findNote(match)
-        }} />
+        <Switch>
+          <Route path='/' exact component={NotesContainer} />
+          <Route path='/api/notes/:id' exact render={({ match }) => {
+            return this.findNote(match)
+          }} />
+          <Route path='/api/new-note' exact component={NotesContainer} />
+          <Route component={PageNotFound} />
+        </Switch>
       </div>
-      // <Route exact path='/' render={() => (
-      // 	<div className="App">
-      // 		<Header />
-      // 		<Form />
-      // 		<NotesContainer/>
-      // 	</div>
-      // )}/>
     );
   }
 }
