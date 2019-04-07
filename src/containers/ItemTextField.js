@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { TextField } from '@material-ui/core';
 
 export class ItemTextField extends Component {
@@ -14,7 +15,6 @@ export class ItemTextField extends Component {
     componentWillMount() {
         const { text, isComplete, id } = this.props
         if (this.props.text) {
-            console.log(this.props)
             this.setState({ text, isComplete, id })
         }
     }
@@ -26,7 +26,6 @@ export class ItemTextField extends Component {
 
     sendListItem = () => {
         const { addListItem, updateItem } = this.props;
-        console.log('send item entered')
         if (addListItem) {
             addListItem(this.state.text)
             this.setState({ text: '' })
@@ -38,9 +37,16 @@ export class ItemTextField extends Component {
     render() {
         const { text } = this.state;
         return (
-            <div> 
+            <div>
                 <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} fullWidth />
             </div>
         );
     }
 }
+ItemTextField.propTypes = {
+    id: PropTypes.number,
+    text: PropTypes.string,
+    isComplete: PropTypes.bool,
+    addListItem: PropTypes.func,
+    updateItem: PropTypes.func
+};

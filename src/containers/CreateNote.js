@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addNote } from '../thunks/addNote';
 import { ItemTextField } from './ItemTextField';
@@ -123,6 +124,14 @@ export class CreateNote extends Component {
         );
     }
 }
+CreateNote.propTypes = {
+    id: PropTypes.string,
+    title: PropTypes.string,
+    itemsList: PropTypes.array,
+    edit: PropTypes.bool,
+    addNote: PropTypes.func,
+    changeNote: PropTypes.func
+};
 
 export const mapDispatchToProps = (dispatch) => ({
     addNote: (newNote) => dispatch(addNote(newNote)),

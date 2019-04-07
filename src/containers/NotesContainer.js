@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NoteCard from '../components/NoteCard';
 
@@ -16,6 +17,10 @@ export class NotesContainer extends Component {
     )
   }
 }
+NotesContainer.propTypes = {
+  notes: PropTypes.array,
+  error: PropTypes.string
+};
 
 export const mapStateToProps = state => ({
   notes: state.notes,
