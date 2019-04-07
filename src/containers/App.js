@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Header } from '../components/Header';
 import { getNotes } from '../thunks/getNotes';
@@ -41,6 +42,10 @@ export class App extends Component {
     );
   }
 }
+App.propTypes = {
+  notes: PropTypes.array,
+  getNotes: PropTypes.func
+};
 
 export const mapDispatchToProps = (dispatch) => ({
   getNotes: () => dispatch(getNotes())

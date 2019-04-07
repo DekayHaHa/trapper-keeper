@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { Card, Tooltip, IconButton, CardContent, CardHeader } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
@@ -15,7 +16,7 @@ class NoteCard extends Component {
 
     render() {
         const { note, classes, deleteNote } = this.props;
-        console.log('note card props: ', this.props.note)
+        console.log('note card props: ', this.props.classes)
         return (
             <Tooltip title='Edit Note' placement='bottom' enterDelay={500}>
                 <Card className={classes.card}>
@@ -39,6 +40,11 @@ class NoteCard extends Component {
         )
     }
 }
+NoteCard.propTypes = {
+    note: PropTypes.object,
+    classes: PropTypes.object,
+    deleteNote: PropTypes.func
+};
 
 const styles = {
     link: {
