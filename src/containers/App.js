@@ -38,6 +38,7 @@ export class App extends Component {
     );
   }
 }
+
 App.propTypes = {
   notes: PropTypes.array,
   getNotes: PropTypes.func

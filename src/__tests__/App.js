@@ -6,6 +6,7 @@ import { getNotes } from '../thunks/getNotes';
 import CreateNote from '../containers/CreateNote';
 
 jest.mock('../thunks/getNotes');
+jest.mock('../containers/CreateNote');
 
 describe('App', () => {
   let wrapper;
@@ -52,6 +53,7 @@ describe('App', () => {
       expect(results).toEqual(expected)
     })
   })
+  
   describe('mapStateToProps', () => {
     it('returns an object with notes', () => {
       const mockState = {
