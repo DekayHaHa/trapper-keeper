@@ -115,7 +115,8 @@ export class CreateNote extends Component {
                         <ItemTextField autofocus addListItem={this.addListItem} />
                     </DialogTitle>
                     <DialogActions>
-                        <form>
+                        <form className='form-btns'>
+                            <Button color="primary">+</Button>
                             <Button type='submit' onClick={this.handleSubmit} color="primary">Save Note</Button>
                         </form>
                     </DialogActions>
