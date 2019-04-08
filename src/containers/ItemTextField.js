@@ -43,9 +43,7 @@ export class ItemTextField extends Component {
     deleteItem = e => {
         const { removeItem } = this.props;
         const { id } = e.target.closest('label');
-        console.log(id)
         removeItem(id);
-        console.log('delete item clicked');
     }
 
     catchKey = e => {
@@ -54,11 +52,12 @@ export class ItemTextField extends Component {
 
     render() {
         const { text, id } = this.state;
+        const { isComplete } = this.props;
         return (
             <div className='item-field-container'>
                 <label id={id} className='label-container'>
                     <Tooltip title='Complete Item' enterDelay={700}>
-                        <Checkbox onClick={(e) => { this.toggleComplete(e) }} />
+                        <Checkbox onClick={(e) => { this.toggleComplete(e) }} checked={isComplete} />
                     </Tooltip>
                     <TextField margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
                     {
