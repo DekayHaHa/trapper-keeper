@@ -102,20 +102,21 @@ export class CreateNote extends Component {
 
         return (
             <div>
-                {this.checkRedirect()}
+                {this.checkRedirect()}  
                 <Tooltip title='Create Note' placement='bottom'>
                     <Button color="primary" onClick={this.handleClickOpen}><span className='add-note-btn'>+</span></Button>
                 </Tooltip>
                 <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title" transitionDuration={800} className='dialog-box'>
                     <DialogTitle>
-                        <TextField autoFocus margin="dense" id="title" label="Title" type="text" name='title' value={title} onChange={this.handleChange} fullWidth />
+                        <TextField margin="dense" id="title" label="Title" type="text" name='title' value={title} onChange={this.handleChange} fullWidth />
                         {
                             this.renderItems()
                         }
-                        <ItemTextField addListItem={this.addListItem} />
+                        <ItemTextField autofocus addListItem={this.addListItem} />
                     </DialogTitle>
                     <DialogActions>
-                        <form>
+                        <form className='form-btns'>
+                            <Button color="primary">+</Button>
                             <Button type='submit' onClick={this.handleSubmit} color="primary">Save Note</Button>
                         </form>
                     </DialogActions>

@@ -13,9 +13,9 @@ export class ItemTextField extends Component {
     }
 
     componentWillMount() {
-        const { text, isComplete, id } = this.props
+        const { text, isComplete, id } = this.props;
         if (this.props.text) {
-            this.setState({ text, isComplete, id })
+            this.setState({ text, isComplete, id });
         }
     }
 
@@ -25,20 +25,25 @@ export class ItemTextField extends Component {
     }
 
     sendListItem = () => {
+        console.log('in send list')
         const { addListItem, updateItem } = this.props;
         if (addListItem) {
-            addListItem(this.state.text)
-            this.setState({ text: '' })
+            addListItem(this.state.text);
+            this.setState({ text: '' });
         } else {
-            updateItem(this.state)
+            updateItem(this.state);
         }
+    }
+
+    catchKey = (e) => {
+        if(e.keyCode === 13) this.sendListItem();
     }
 
     render() {
         const { text } = this.state;
         return (
             <div>
-                <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} fullWidth />
+                <TextField margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem}onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
             </div>
         );
     }
