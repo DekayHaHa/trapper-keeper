@@ -43,11 +43,12 @@ export class ItemTextField extends Component {
         const { text } = this.state;
         return (
             <div>
-                <TextField margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem}onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
+                <TextField margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
             </div>
         );
     }
 }
+
 ItemTextField.propTypes = {
     id: PropTypes.number,
     text: PropTypes.string,

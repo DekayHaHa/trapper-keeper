@@ -2,7 +2,6 @@ import React from 'react';
 import { CreateNote, mapDispatchToProps } from '../containers/CreateNote';
 import { addNote } from '../thunks/addNote';
 import { shallow } from 'enzyme';
-import { ItemInput } from '../containers/ItemInput';
 
 jest.mock('../thunks/addNote');
 

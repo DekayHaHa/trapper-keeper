@@ -18,7 +18,7 @@ export class App extends Component {
     const { notes } = this.props;
     const { id } = match.params;
     const note = notes.find(note => note.id === id);
-    return note ? <CreateNote edit={true} {...note} /> : <PageNotFound />
+    return note
   }
 
   render() {
@@ -37,6 +37,7 @@ export class App extends Component {
     );
   }
 }
+
 App.propTypes = {
   notes: PropTypes.array,
   getNotes: PropTypes.func
