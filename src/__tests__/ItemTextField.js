@@ -2,7 +2,7 @@ import React from 'react';
 import { ItemTextField } from '../containers/ItemTextField';
 import { shallow } from 'enzyme';
 
-describe('', () => {
+describe('ItemTextField', () => {
 	let wrapper;
 
 	beforeEach(() => {
