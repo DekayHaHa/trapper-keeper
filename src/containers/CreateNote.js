@@ -75,6 +75,14 @@ export class CreateNote extends Component {
     return matchingNoteItem;
   };
 
+  // toggleComplete = id => {
+  //   const { itemsList } = this.state;
+  //   const newItems = itemsList.map(item => {
+  //     return id === item.id ? { ...item, isComplete: !isComplete } : item
+  //   });
+  //   this.setState({ itemsList: newItems });
+  // }
+
   updateItem = item => {
     const { itemsList } = this.state;
     const newItems = itemsList.map(val => {
@@ -92,7 +100,7 @@ export class CreateNote extends Component {
 
     renderItems = () => {
         return this.state.itemsList.map((item) => {
-            return <ItemTextField key={item.id} {...item} toggle={this.toggleComplete} updateItem={this.updateItem} />;
+            return <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} />;
         });
     };
 
@@ -103,20 +111,6 @@ export class CreateNote extends Component {
     handleClose = () => {
         this.setState({ open: false });
     };
-
-
-  renderItems = () => {
-    return this.state.itemsList.map(item => {
-      return (
-        <ItemTextField
-          key={item.id}
-          {...item}
-          handleIsComplete={this.handleIsComplete}
-          updateItem={this.updateItem}
-        />
-      );
-    });
-  };
 
   render() {
     const { open, title } = this.state;
@@ -129,15 +123,37 @@ export class CreateNote extends Component {
             <span className="add-note-btn">+</span>
           </Button>
         </Tooltip>
-        <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title" transitionDuration={800} className="dialog-box">
+        <Dialog
+          open={open}
+          onClose={this.handleClose}
+          aria-labelledby="form-dialog-title"
+          transitionDuration={800}
+          className="dialog-box"
+        >
           <DialogTitle>
-            <TextField autoFocus margin="dense" id="title" label="Title" type="text" name="title" value={title} onChange={this.handleChange} fullWidth />
+            <TextField
+              autofocus
+              margin="dense"
+              id="title"
+              label="Title"
+              type="text"
+              name="title"
+              value={title}
+              onChange={this.handleChange}
+              fullWidth
+            />
             {this.renderItems()}
-            <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} />
+            <ItemTextField
+              addListItem={this.addListItem}
+              handleIsComplete={this.handleIsComplete}
+            />
           </DialogTitle>
           <DialogActions>
-            <form>
-              <Button type="submit" onClick={this.handleSubmit} color="primary">Save Note</Button>
+            <form className="form-btns">
+              <Button color="primary">+</Button>
+              <Button type="submit" onClick={this.handleSubmit} color="primary">
+                Save Note
+              </Button>
             </form>
           </DialogActions>
         </Dialog>
@@ -145,6 +161,7 @@ export class CreateNote extends Component {
     );
   }
 }
+
 
 CreateNote.propTypes = {
     id: PropTypes.string,

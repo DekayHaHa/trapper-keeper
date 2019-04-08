@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 export const Header = () => {
   return (
     <header className="header-container">
-      <h1>Task Mancer</h1>
+      <Link to="/" className='link-style'>
+        <h1>Task Mancer</h1>
+      </Link>
+      {/* <h1>Task Mancer</h1> */}
       <Link to="/api/new-note" className="new-note-btn">
         <CreateNote />
       </Link>
