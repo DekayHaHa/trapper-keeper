@@ -41,16 +41,15 @@ export class CreateNote extends Component {
     }
   };
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const { title, itemsList } = this.state;
-        const { edit, changeNote, addNote, id } = this.props;
-        const data = { title, itemsList };
-        edit ? changeNote({ id, title, itemsList }) : addNote(data);
-        this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
-            this.setState({ redirect: false })
-        })
-    }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { title, itemsList } = this.state;
+    const { edit, changeNote, addNote, id } = this.props;
+    const data = { title, itemsList };
+    edit ? changeNote({ id, title, itemsList }) : addNote(data);
+    this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
+      this.setState({ redirect: false })
+    })
   };
 
   handleIsComplete = id => {
@@ -120,7 +119,8 @@ export class CreateNote extends Component {
             </div>
         );
     }
-}
+  }
+
 
 
 CreateNote.propTypes = {
