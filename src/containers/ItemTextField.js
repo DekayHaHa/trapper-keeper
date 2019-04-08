@@ -52,7 +52,7 @@ export class ItemTextField extends Component {
                     <Tooltip title='Complete Item' enterDelay={700}>
                         <Checkbox onClick={(e) => { this.toggleComplete(e) }} />
                     </Tooltip>
-                    <TextField autofocus margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
+                    <TextField margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
                 </label>
             </div>
         );

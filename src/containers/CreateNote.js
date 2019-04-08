@@ -103,11 +103,11 @@ export class CreateNote extends Component {
                 </Tooltip>
                 <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title" transitionDuration={800} className='dialog-box'>
                     <DialogTitle>
-                        <TextField autofocus margin="dense" id="title" label="Title" type="text" name='title' value={title} onChange={this.handleChange} fullWidth />
+                        <TextField margin="dense" id="title" label="Title" type="text" name='title' value={title} onChange={this.handleChange} fullWidth />
                         {
                             this.renderItems()
                         }
-                        <ItemTextField addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} />
+                        <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} />
                     </DialogTitle>
                     <DialogActions>
                         <form className='form-btns'>
