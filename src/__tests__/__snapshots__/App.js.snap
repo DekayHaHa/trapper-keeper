@@ -49,16 +49,26 @@ ShallowWrapper {
           component={[Function]}
           path="/"
         />,
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        />,
-        <Route
-          exact={true}
-          path="/api/notes/:id"
-          render={[Function]}
-        />,
+        <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+          />
+          <Route
+            exact={true}
+            path="/api/notes/:id"
+            render={[Function]}
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/api/new-note"
+          />
+          <Route
+            component={[Function]}
+          />
+        </Switch>,
       ],
     },
     "ref": null,
@@ -80,25 +90,80 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "component": [Function],
-          "exact": true,
-          "path": "/",
+          "children": Array [
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/"
+            />,
+            <Route
+              exact={true}
+              path="/api/notes/:id"
+              render={[Function]}
+            />,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/api/new-note"
+            />,
+            <Route
+              component={[Function]}
+            />,
+          ],
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "exact": true,
-          "path": "/api/notes/:id",
-          "render": [Function],
-        },
-        "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/api/notes/:id",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/api/new-note",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
         "type": [Function],
       },
     ],
@@ -115,16 +180,26 @@ ShallowWrapper {
             component={[Function]}
             path="/"
           />,
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/"
-          />,
-          <Route
-            exact={true}
-            path="/api/notes/:id"
-            render={[Function]}
-          />,
+          <Switch>
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/"
+            />
+            <Route
+              exact={true}
+              path="/api/notes/:id"
+              render={[Function]}
+            />
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/api/new-note"
+            />
+            <Route
+              component={[Function]}
+            />
+          </Switch>,
         ],
       },
       "ref": null,
@@ -146,25 +221,80 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "component": [Function],
-            "exact": true,
-            "path": "/",
+            "children": Array [
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/"
+              />,
+              <Route
+                exact={true}
+                path="/api/notes/:id"
+                render={[Function]}
+              />,
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/api/new-note"
+              />,
+              <Route
+                component={[Function]}
+              />,
+            ],
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/api/notes/:id",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/api/notes/:id",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/api/new-note",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
       ],

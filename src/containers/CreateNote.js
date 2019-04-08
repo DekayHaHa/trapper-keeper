@@ -46,17 +46,15 @@ export class CreateNote extends Component {
         const { title, itemsList } = this.state;
         const { edit, changeNote, addNote, id } = this.props;
         const data = { title, itemsList };
-        if (edit) {
-            changeNote({ id, title, itemsList });
-            this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
-                this.setState({ redirect: false })
-            })
-        } else {
-            addNote(data);
-            this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
-                this.setState({ redirect: false })
-            })
-        }
+        edit ? changeNote({ id, title, itemsList }) : addNote(data);
+        // if (edit) {
+        //     changeNote({ id, title, itemsList });
+        // } else {
+        //     addNote(data);
+        // }
+        this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
+            this.setState({ redirect: false })
+        })
     }
 
     toggleComplete = (id) => {
@@ -102,7 +100,7 @@ export class CreateNote extends Component {
 
         return (
             <div>
-                {this.checkRedirect()}  
+                {this.checkRedirect()}
                 <Tooltip title='Create Note' placement='bottom'>
                     <Button color="primary" onClick={this.handleClickOpen}><span className='add-note-btn'>+</span></Button>
                 </Tooltip>
