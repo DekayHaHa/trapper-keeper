@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Header } from '../components/Header';
 import { getNotes } from '../thunks/getNotes';
-// import Form from './Form';
 import NotesContainer from './NotesContainer';
 import { Route } from 'react-router-dom';
 import CreateNote from '../containers/CreateNote'
 import { PageNotFound } from '../components/PageNotFound';
 
 export class App extends Component {
+
   componentDidMount() {
     this.props.getNotes();
   }
@@ -16,7 +16,6 @@ export class App extends Component {
   findNote = (match) => {
     const { notes } = this.props;
     const { id } = match.params;
-    console.log('match params: ', id);
     const note = notes.find(note => note.id === id);
     return <CreateNote edit={true} {...note} />
   }
@@ -31,13 +30,6 @@ export class App extends Component {
           return note || <PageNotFound />
         }} />
       </div>
-      // <Route exact path='/' render={() => (
-      // 	<div className="App">
-      // 		<Header />
-      // 		<Form />
-      // 		<NotesContainer/>
-      // 	</div>
-      // )}/>
     );
   }
 }

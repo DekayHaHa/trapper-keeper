@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField } from '@material-ui/core';
+import { TextField, Tooltip, Checkbox } from '@material-ui/core';
 
 export class ItemTextField extends Component {
     constructor(props) {
@@ -13,9 +13,8 @@ export class ItemTextField extends Component {
 
     componentWillMount() {
         const { text, isComplete, id } = this.props
-        if (this.props.text) {
-            console.log(this.props)
-            this.setState({ text, isComplete, id })
+        if (text) {
+            this.setState({ text, isComplete, id });
         }
     }
 
@@ -26,7 +25,6 @@ export class ItemTextField extends Component {
 
     sendListItem = () => {
         const { addListItem, updateItem } = this.props;
-        console.log('send item entered')
         if (addListItem) {
             addListItem(this.state.text)
             this.setState({ text: '' })
@@ -35,11 +33,23 @@ export class ItemTextField extends Component {
         }
     }
 
+    toggleComplete = (e) => {
+        const { handleIsComplete } = this.props;
+        const { id } = e.target.closest('label');
+        handleIsComplete(id);
+    }
+
     render() {
-        const { text } = this.state;
+        const { text, id } = this.state;
         return (
-            <div> 
-                <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} fullWidth />
+            <div className='item-field-container'>
+                <label id={id} className='label-container'>
+                    <Tooltip title='Complete Item' enterDelay={700}>
+                        <Checkbox onClick={(e) => { this.toggleComplete(e) }} />
+                    </Tooltip>
+                    <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} fullWidth />
+
+                </label>
             </div>
         );
     }
