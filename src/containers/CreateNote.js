@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addNote } from '../thunks/addNote';
 import { ItemTextField } from './ItemTextField';
@@ -88,8 +89,21 @@ export class CreateNote extends Component {
     const { redirect, open } = this.state;
     if (!open && redirect) {
       return <Redirect to="/" />;
-    }
-  };
+
+    renderItems = () => {
+        return this.state.itemsList.map((item) => {
+            return <ItemTextField key={item.id} {...item} toggle={this.toggleComplete} updateItem={this.updateItem} />;
+        });
+    };
+
+    handleClickOpen = () => {
+        this.setState({ open: true });
+    };
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
+
 
   renderItems = () => {
     return this.state.itemsList.map(item => {
@@ -102,14 +116,6 @@ export class CreateNote extends Component {
         />
       );
     });
-  };
-
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
   };
 
   render() {
@@ -128,7 +134,7 @@ export class CreateNote extends Component {
           <DialogTitle>
             <TextField autoFocus margin="dense" id="title" label="Title" type="text" name="title" value={title} onChange={this.handleChange} fullWidth />
             {this.renderItems()}
-            <ItemTextField addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} />
+            <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} />
           </DialogTitle>
           <DialogActions>
             <form>
@@ -140,6 +146,15 @@ export class CreateNote extends Component {
     );
   }
 }
+
+CreateNote.propTypes = {
+    id: PropTypes.string,
+    title: PropTypes.string,
+    itemsList: PropTypes.array,
+    edit: PropTypes.bool,
+    addNote: PropTypes.func,
+    changeNote: PropTypes.func
+};
 
 export const mapDispatchToProps = (dispatch) => ({
     addNote: (newNote) => dispatch(addNote(newNote)),

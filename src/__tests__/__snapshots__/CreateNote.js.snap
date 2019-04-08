@@ -1,0 +1,599 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CreateNote
+    addNote={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        undefined,
+        <WithStyles(Tooltip)
+          placement="bottom"
+          title="Create Note"
+        >
+          <WithStyles(Button)
+            color="primary"
+            onClick={[Function]}
+          >
+            <span
+              className="add-note-btn"
+            >
+              +
+            </span>
+          </WithStyles(Button)>
+        </WithStyles(Tooltip)>,
+        <WithStyles(Dialog)
+          aria-labelledby="form-dialog-title"
+          className="dialog-box"
+          onClose={[Function]}
+          open={false}
+          transitionDuration={800}
+        >
+          <WithStyles(DialogTitle)>
+            <TextField
+              autoFocus={true}
+              fullWidth={true}
+              id="title"
+              label="Title"
+              margin="dense"
+              name="title"
+              onChange={[Function]}
+              required={false}
+              select={false}
+              type="text"
+              value=""
+              variant="standard"
+            />
+            <ItemTextField
+              addListItem={[Function]}
+            />
+          </WithStyles(DialogTitle)>
+          <WithStyles(DialogActions)>
+            <form>
+              <WithStyles(Button)
+                color="primary"
+                onClick={[Function]}
+                type="submit"
+              >
+                Save Note
+              </WithStyles(Button)>
+            </form>
+          </WithStyles(DialogActions)>
+        </WithStyles(Dialog)>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      undefined,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <WithStyles(Button)
+            color="primary"
+            onClick={[Function]}
+          >
+            <span
+              className="add-note-btn"
+            >
+              +
+            </span>
+          </WithStyles(Button)>,
+          "placement": "bottom",
+          "title": "Create Note",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <span
+              className="add-note-btn"
+            >
+              +
+            </span>,
+            "color": "primary",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "+",
+              "className": "add-note-btn",
+            },
+            "ref": null,
+            "rendered": "+",
+            "type": "span",
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "aria-labelledby": "form-dialog-title",
+          "children": Array [
+            <WithStyles(DialogTitle)>
+              <TextField
+                autoFocus={true}
+                fullWidth={true}
+                id="title"
+                label="Title"
+                margin="dense"
+                name="title"
+                onChange={[Function]}
+                required={false}
+                select={false}
+                type="text"
+                value=""
+                variant="standard"
+              />
+              <ItemTextField
+                addListItem={[Function]}
+              />
+            </WithStyles(DialogTitle)>,
+            <WithStyles(DialogActions)>
+              <form>
+                <WithStyles(Button)
+                  color="primary"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Save Note
+                </WithStyles(Button)>
+              </form>
+            </WithStyles(DialogActions)>,
+          ],
+          "className": "dialog-box",
+          "onClose": [Function],
+          "open": false,
+          "transitionDuration": 800,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <TextField
+                  autoFocus={true}
+                  fullWidth={true}
+                  id="title"
+                  label="Title"
+                  margin="dense"
+                  name="title"
+                  onChange={[Function]}
+                  required={false}
+                  select={false}
+                  type="text"
+                  value=""
+                  variant="standard"
+                />,
+                Array [],
+                <ItemTextField
+                  addListItem={[Function]}
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "autoFocus": true,
+                  "fullWidth": true,
+                  "id": "title",
+                  "label": "Title",
+                  "margin": "dense",
+                  "name": "title",
+                  "onChange": [Function],
+                  "required": false,
+                  "select": false,
+                  "type": "text",
+                  "value": "",
+                  "variant": "standard",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "addListItem": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <form>
+                <WithStyles(Button)
+                  color="primary"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Save Note
+                </WithStyles(Button)>
+              </form>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <WithStyles(Button)
+                  color="primary"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Save Note
+                </WithStyles(Button)>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Save Note",
+                  "color": "primary",
+                  "onClick": [Function],
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": "Save Note",
+                "type": [Function],
+              },
+              "type": "form",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          undefined,
+          <WithStyles(Tooltip)
+            placement="bottom"
+            title="Create Note"
+          >
+            <WithStyles(Button)
+              color="primary"
+              onClick={[Function]}
+            >
+              <span
+                className="add-note-btn"
+              >
+                +
+              </span>
+            </WithStyles(Button)>
+          </WithStyles(Tooltip)>,
+          <WithStyles(Dialog)
+            aria-labelledby="form-dialog-title"
+            className="dialog-box"
+            onClose={[Function]}
+            open={false}
+            transitionDuration={800}
+          >
+            <WithStyles(DialogTitle)>
+              <TextField
+                autoFocus={true}
+                fullWidth={true}
+                id="title"
+                label="Title"
+                margin="dense"
+                name="title"
+                onChange={[Function]}
+                required={false}
+                select={false}
+                type="text"
+                value=""
+                variant="standard"
+              />
+              <ItemTextField
+                addListItem={[Function]}
+              />
+            </WithStyles(DialogTitle)>
+            <WithStyles(DialogActions)>
+              <form>
+                <WithStyles(Button)
+                  color="primary"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Save Note
+                </WithStyles(Button)>
+              </form>
+            </WithStyles(DialogActions)>
+          </WithStyles(Dialog)>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Button)
+              color="primary"
+              onClick={[Function]}
+            >
+              <span
+                className="add-note-btn"
+              >
+                +
+              </span>
+            </WithStyles(Button)>,
+            "placement": "bottom",
+            "title": "Create Note",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <span
+                className="add-note-btn"
+              >
+                +
+              </span>,
+              "color": "primary",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "+",
+                "className": "add-note-btn",
+              },
+              "ref": null,
+              "rendered": "+",
+              "type": "span",
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "aria-labelledby": "form-dialog-title",
+            "children": Array [
+              <WithStyles(DialogTitle)>
+                <TextField
+                  autoFocus={true}
+                  fullWidth={true}
+                  id="title"
+                  label="Title"
+                  margin="dense"
+                  name="title"
+                  onChange={[Function]}
+                  required={false}
+                  select={false}
+                  type="text"
+                  value=""
+                  variant="standard"
+                />
+                <ItemTextField
+                  addListItem={[Function]}
+                />
+              </WithStyles(DialogTitle)>,
+              <WithStyles(DialogActions)>
+                <form>
+                  <WithStyles(Button)
+                    color="primary"
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    Save Note
+                  </WithStyles(Button)>
+                </form>
+              </WithStyles(DialogActions)>,
+            ],
+            "className": "dialog-box",
+            "onClose": [Function],
+            "open": false,
+            "transitionDuration": 800,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <TextField
+                    autoFocus={true}
+                    fullWidth={true}
+                    id="title"
+                    label="Title"
+                    margin="dense"
+                    name="title"
+                    onChange={[Function]}
+                    required={false}
+                    select={false}
+                    type="text"
+                    value=""
+                    variant="standard"
+                  />,
+                  Array [],
+                  <ItemTextField
+                    addListItem={[Function]}
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "autoFocus": true,
+                    "fullWidth": true,
+                    "id": "title",
+                    "label": "Title",
+                    "margin": "dense",
+                    "name": "title",
+                    "onChange": [Function],
+                    "required": false,
+                    "select": false,
+                    "type": "text",
+                    "value": "",
+                    "variant": "standard",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "addListItem": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <form>
+                  <WithStyles(Button)
+                    color="primary"
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    Save Note
+                  </WithStyles(Button)>
+                </form>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <WithStyles(Button)
+                    color="primary"
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    Save Note
+                  </WithStyles(Button)>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Save Note",
+                    "color": "primary",
+                    "onClick": [Function],
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Save Note",
+                  "type": [Function],
+                },
+                "type": "form",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { TextField, Tooltip, Checkbox } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { TextField } from '@material-ui/core';
 
 export class ItemTextField extends Component {
     constructor(props) {
@@ -12,8 +14,8 @@ export class ItemTextField extends Component {
     }
 
     componentWillMount() {
-        const { text, isComplete, id } = this.props
-        if (text) {
+      const { text, isComplete, id } = this.props
+        if (text) {       
             this.setState({ text, isComplete, id });
         }
     }
@@ -24,12 +26,13 @@ export class ItemTextField extends Component {
     }
 
     sendListItem = () => {
+        console.log('in send list')
         const { addListItem, updateItem } = this.props;
         if (addListItem) {
-            addListItem(this.state.text)
-            this.setState({ text: '' })
+            addListItem(this.state.text);
+            this.setState({ text: '' });
         } else {
-            updateItem(this.state)
+            updateItem(this.state);
         }
     }
 
@@ -37,6 +40,10 @@ export class ItemTextField extends Component {
         const { handleIsComplete } = this.props;
         const { id } = e.target.closest('label');
         handleIsComplete(id);
+    }
+
+    catchKey = (e) => {
+        if(e.keyCode === 13) this.sendListItem();
     }
 
     render() {
@@ -47,10 +54,17 @@ export class ItemTextField extends Component {
                     <Tooltip title='Complete Item' enterDelay={700}>
                         <Checkbox onClick={(e) => { this.toggleComplete(e) }} />
                     </Tooltip>
-                    <TextField autoFocus margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} fullWidth />
-
+                    <TextField margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem}onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
                 </label>
             </div>
         );
     }
 }
+
+ItemTextField.propTypes = {
+    id: PropTypes.number,
+    text: PropTypes.string,
+    isComplete: PropTypes.bool,
+    addListItem: PropTypes.func,
+    updateItem: PropTypes.func
+};

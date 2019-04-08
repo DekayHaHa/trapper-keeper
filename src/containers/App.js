@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Header } from '../components/Header';
 import { getNotes } from '../thunks/getNotes';
 import NotesContainer from './NotesContainer';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import CreateNote from '../containers/CreateNote'
 import { PageNotFound } from '../components/PageNotFound';
 
@@ -17,22 +18,29 @@ export class App extends Component {
     const { notes } = this.props;
     const { id } = match.params;
     const note = notes.find(note => note.id === id);
-    return <CreateNote edit={true} {...note} />
+    return note ? <CreateNote edit={true} {...note} /> : <PageNotFound />
   }
 
   render() {
     return (
       <div>
         <Route path='/' component={Header} />
-        <Route exact path='/' component={NotesContainer} />
-        <Route exact path='/api/notes/:id' render={({ match }) => {
-          const note = this.findNote(match)
-          return note || <PageNotFound />
-        }} />
+        <Switch>
+          <Route path='/' exact component={NotesContainer} />
+          <Route path='/api/notes/:id' exact render={({ match }) => {
+            return this.findNote(match)
+          }} />
+          <Route path='/api/new-note' exact component={NotesContainer} />
+          <Route component={PageNotFound} />
+        </Switch>
       </div>
     );
   }
 }
+App.propTypes = {
+  notes: PropTypes.array,
+  getNotes: PropTypes.func
+};
 
 export const mapDispatchToProps = (dispatch) => ({
   getNotes: () => dispatch(getNotes())
