@@ -87,15 +87,19 @@ export class CreateNote extends Component {
 
   renderItems = () => {
     const { itemsList } = this.state;
-    console.log(itemsList)
-    // const completeItems = itemsList.filter(item => item.isComplete === true);
-    // const incompleteItems = itemsList.filter(item => item.isComplete === false);
-    return itemsList.map(item => {
+    const completeItems = itemsList.filter(item => item.isComplete === true);
+    const incompleteItems = itemsList.filter(item => item.isComplete === false);
+    return [...incompleteItems.map(item => {
       console.log(item.isComplete)
       return (
-        <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} />
+        <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} />
       )
-    });
+    }),
+      <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem} />,
+      ...completeItems.map(item => {
+        return <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} />
+    })]
+
     };
 
     handleClickOpen = () => {
@@ -103,7 +107,7 @@ export class CreateNote extends Component {
     };
 
     handleClose = () => {
-        this.setState({ open: false });
+      this.setState({ open: false });
     };
 
     render() {
@@ -121,7 +125,7 @@ export class CreateNote extends Component {
                         {
                             this.renderItems()
                         }
-                        <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem}/>
+                        {/* <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem}/> */}
                     </DialogTitle>
                     <DialogActions>
                         <form className='form-btns'>
