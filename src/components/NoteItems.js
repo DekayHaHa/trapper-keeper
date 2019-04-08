@@ -5,18 +5,17 @@ import { withStyles } from '@material-ui/core/styles';
 export const NoteItems = ({ noteItems, classes }) => {
     const itemsList = noteItems.map(item => (
       <div iscomplete={JSON.stringify(item.isComplete)} key={item.id} >
-        <Typography id={item.id} className={item.isComplete ? classes.strikethrough : ''} style={{ color: '#48494a' }} >
+        <Typography id={item.id} className={item.isComplete ? classes.strikethrough : ''} style={{ color: '#000' }} >
           {item.text}
         </Typography>
         <Divider light />
       </div>
     ));
 
-    console.log('items list: ', itemsList)
     return (
       <div>
         {itemsList.filter(item => item.props.iscomplete === 'false')}
-        <Divider className={classes} />
+        <Divider className={classes.divider} />
         {itemsList.filter(item => item.props.iscomplete === 'true')}
       </div>
     );
@@ -24,7 +23,7 @@ export const NoteItems = ({ noteItems, classes }) => {
 
 const styles = {
   divider: {
-    backgroundColor: '#ff8922'
+    backgroundColor: '#9445FF'
   },
   strikethrough: {
     textDecoration: 'line-through'
