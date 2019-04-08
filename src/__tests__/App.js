@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { App, mapDispatchToProps, mapStateToProps } from '../containers/App';
 import { shallow } from 'enzyme';
 import { getNotes } from '../thunks/getNotes';
-import { CreateNote } from '../containers/CreateNote';
+import CreateNote from '../containers/CreateNote';
 
 jest.mock('../thunks/getNotes');
 
@@ -45,12 +45,11 @@ describe('App', () => {
   });
 
   describe('findNote', () => {
-    it.skip('should find note to render an instance of CreateNote', () => {
+    it('should find note to render an instance of CreateNote', () => {
       const mockMatch = { params: { id: 2 } }
       const results = wrapper.instance().findNote(mockMatch)
-      console.log(results)
-      // discuss changing the return value of findNote to the note and not the component.
-      expect(results).toBeInstanceOf(CreateNote)
+      const expected = { id: 2, title: 'title 2' }
+      expect(results).toEqual(expected)
     })
   })
   describe('mapStateToProps', () => {
@@ -62,7 +61,6 @@ describe('App', () => {
       const expectedState = {
         notes: ['1', '2', '3']
       }
-
       const mappedProps = mapStateToProps(mockState);
       expect(mappedProps).toEqual(expectedState);
     });

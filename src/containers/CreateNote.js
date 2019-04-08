@@ -41,21 +41,15 @@ export class CreateNote extends Component {
     }
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const { title, itemsList } = this.state;
-    const { edit, changeNote, addNote, id } = this.props;
-    const data = { title, itemsList };
-    if (edit) {
-      changeNote({ id, title, itemsList });
-      this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
-        this.setState({ redirect: false });
-      });
-    } else {
-      addNote(data);
-      this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
-        this.setState({ redirect: false });
-      });
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const { title, itemsList } = this.state;
+        const { edit, changeNote, addNote, id } = this.props;
+        const data = { title, itemsList };
+        edit ? changeNote({ id, title, itemsList }) : addNote(data);
+        this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
+            this.setState({ redirect: false })
+        })
     }
   };
 
@@ -69,19 +63,6 @@ export class CreateNote extends Component {
     });
     this.setState({ itemsList: changedItemList });
   }
-
-  findNoteItem = (noteItems, id) => {
-    const matchingNoteItem = noteItems.find(note => note.id === id);
-    return matchingNoteItem;
-  };
-
-  // toggleComplete = id => {
-  //   const { itemsList } = this.state;
-  //   const newItems = itemsList.map(item => {
-  //     return id === item.id ? { ...item, isComplete: !isComplete } : item
-  //   });
-  //   this.setState({ itemsList: newItems });
-  // }
 
   updateItem = item => {
     const { itemsList } = this.state;
@@ -112,54 +93,33 @@ export class CreateNote extends Component {
         this.setState({ open: false });
     };
 
-  render() {
-    const { open, title } = this.state;
+    render() {
+        const { open, title } = this.state;
 
-    return (
-      <div>
-        {this.checkRedirect()}
-        <Tooltip title="Create Note" placement="bottom">
-          <Button color="primary" onClick={this.handleClickOpen}>
-            <span className="add-note-btn">+</span>
-          </Button>
-        </Tooltip>
-        <Dialog
-          open={open}
-          onClose={this.handleClose}
-          aria-labelledby="form-dialog-title"
-          transitionDuration={800}
-          className="dialog-box"
-        >
-          <DialogTitle>
-            <TextField
-              autofocus
-              margin="dense"
-              id="title"
-              label="Title"
-              type="text"
-              name="title"
-              value={title}
-              onChange={this.handleChange}
-              fullWidth
-            />
-            {this.renderItems()}
-            <ItemTextField
-              addListItem={this.addListItem}
-              handleIsComplete={this.handleIsComplete}
-            />
-          </DialogTitle>
-          <DialogActions>
-            <form className="form-btns">
-              <Button color="primary">+</Button>
-              <Button type="submit" onClick={this.handleSubmit} color="primary">
-                Save Note
-              </Button>
-            </form>
-          </DialogActions>
-        </Dialog>
-      </div>
-    );
-  }
+        return (
+            <div>
+                {this.checkRedirect()}
+                <Tooltip title='Create Note' placement='bottom'>
+                    <Button color="primary" onClick={this.handleClickOpen}><span className='add-note-btn'>+</span></Button>
+                </Tooltip>
+                <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title" transitionDuration={800} className='dialog-box'>
+                    <DialogTitle>
+                        <TextField autofocus margin="dense" id="title" label="Title" type="text" name='title' value={title} onChange={this.handleChange} fullWidth />
+                        {
+                            this.renderItems()
+                        }
+                        <ItemTextField addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} />
+                    </DialogTitle>
+                    <DialogActions>
+                        <form className='form-btns'>
+                            <Button color="primary">+</Button>
+                            <Button type='submit' onClick={this.handleSubmit} color="primary">Save Note</Button>
+                        </form>
+                    </DialogActions>
+                </Dialog>
+            </div>
+        );
+    }
 }
 
 

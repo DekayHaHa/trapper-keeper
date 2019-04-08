@@ -18,7 +18,7 @@ export class App extends Component {
     const { notes } = this.props;
     const { id } = match.params;
     const note = notes.find(note => note.id === id);
-    return note ? <CreateNote edit={true} {...note} /> : <PageNotFound />
+    return note
   }
 
   render() {
@@ -28,7 +28,8 @@ export class App extends Component {
         <Switch>
           <Route path='/' exact component={NotesContainer} />
           <Route path='/api/notes/:id' exact render={({ match }) => {
-            return this.findNote(match)
+            const note = this.findNote(match)
+            return note ? <CreateNote edit={true} {...note} /> : <PageNotFound />
           }} />
           <Route path='/api/new-note' exact component={NotesContainer} />
           <Route component={PageNotFound} />
