@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Card, Tooltip, IconButton, CardContent, CardHeader } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { NoteItems } from './NoteItems';
+import NoteItems from './NoteItems';
 import Icon from '@material-ui/core/Icon';
 import { deleteNote } from '../thunks/deleteNote';
 
@@ -13,7 +13,7 @@ export class NoteCard extends Component {
     passNoteId = () => {
 
     }
-
+    
     render() {
         const { note, classes, deleteNote } = this.props;
         console.log('note card props: ', this.props.classes)

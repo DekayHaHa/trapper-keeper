@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Header } from '../components/Header';
 import { getNotes } from '../thunks/getNotes';
-// import Form from './Form';
 import NotesContainer from './NotesContainer';
 import { Route, Switch } from 'react-router-dom';
 import CreateNote from '../containers/CreateNote'
 import { PageNotFound } from '../components/PageNotFound';
 
 export class App extends Component {
+
   componentDidMount() {
     this.props.getNotes();
   }
