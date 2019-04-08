@@ -61,10 +61,8 @@ export class CreateNote extends Component {
 
   handleIsComplete = id => {
     const { itemsList } = this.state;
-    console.log('handle complete id: ', id)
     const changedItemList = itemsList.map(item => {
       if (item.id === parseInt(id)) {
-        console.log('item is complete entered', item.isComplete)
         item.isComplete = !item.isComplete;
       }
       return item;
@@ -122,7 +120,6 @@ export class CreateNote extends Component {
 
   render() {
     const { open, title } = this.state;
-    console.log('items List: ', this.state.itemsList);
 
     return (
       <div>

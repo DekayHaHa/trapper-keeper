@@ -12,8 +12,6 @@ export const NoteItems = ({ noteItems, classes }) => {
       </div>
     ));
 
-  console.log('items list: ', itemsList)
-  console.log(classes)
     return (
       <div>
         {itemsList.filter(item => item.props.iscomplete === 'false')}

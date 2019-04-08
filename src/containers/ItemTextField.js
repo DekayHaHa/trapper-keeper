@@ -25,7 +25,6 @@ export class ItemTextField extends Component {
     }
 
     sendListItem = () => {
-        console.log('in send list')
         const { addListItem, updateItem } = this.props;
         if (addListItem) {
             addListItem(this.state.text);

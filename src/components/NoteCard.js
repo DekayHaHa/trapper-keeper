@@ -10,13 +10,8 @@ import { deleteNote } from '../thunks/deleteNote';
 
 export class NoteCard extends Component {
 
-    passNoteId = () => {
-
-    }
-    
     render() {
         const { note, classes, deleteNote } = this.props;
-        console.log('note card props: ', this.props.classes)
         return (
             <Tooltip title='Edit Note' placement='bottom' enterDelay={500}>
                 <Card className={classes.card}>
