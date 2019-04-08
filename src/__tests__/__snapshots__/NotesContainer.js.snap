@@ -26,19 +26,14 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Note)
-          0="n"
-          1="o"
-          2="t"
-          3="e"
+        <WithStyles(Connect(NoteCard))
+          note="note"
         />,
-        <Connect(Note)
-          0="n"
-          1="o"
-          2="t"
-          3="e"
+        <WithStyles(Connect(NoteCard))
+          note="note"
         />,
       ],
+      "className": "notes-container",
     },
     "ref": null,
     "rendered": Array [
@@ -47,10 +42,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "0": "n",
-          "1": "o",
-          "2": "t",
-          "3": "e",
+          "deleteNote": undefined,
+          "note": "note",
+          "title": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -61,10 +55,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "0": "n",
-          "1": "o",
-          "2": "t",
-          "3": "e",
+          "deleteNote": undefined,
+          "note": "note",
+          "title": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -80,19 +73,14 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Note)
-            0="n"
-            1="o"
-            2="t"
-            3="e"
+          <WithStyles(Connect(NoteCard))
+            note="note"
           />,
-          <Connect(Note)
-            0="n"
-            1="o"
-            2="t"
-            3="e"
+          <WithStyles(Connect(NoteCard))
+            note="note"
           />,
         ],
+        "className": "notes-container",
       },
       "ref": null,
       "rendered": Array [
@@ -101,10 +89,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "0": "n",
-            "1": "o",
-            "2": "t",
-            "3": "e",
+            "deleteNote": undefined,
+            "note": "note",
+            "title": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -115,10 +102,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "0": "n",
-            "1": "o",
-            "2": "t",
-            "3": "e",
+            "deleteNote": undefined,
+            "note": "note",
+            "title": undefined,
           },
           "ref": null,
           "rendered": null,
