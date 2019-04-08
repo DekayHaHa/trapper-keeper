@@ -8,7 +8,7 @@ import { NoteItems } from './NoteItems';
 import Icon from '@material-ui/core/Icon';
 import { deleteNote } from '../thunks/deleteNote';
 
-class NoteCard extends Component {
+export class NoteCard extends Component {
 
     passNoteId = () => {
 

@@ -1,0 +1,517 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteCard should match snapshot with all data passed in 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NoteCard
+    classes={
+      Object {
+        "title": "im an object",
+      }
+    }
+    deleteNote={[MockFunction]}
+    note={
+      Object {
+        "itemsList": undefined,
+        "title": "title 1",
+      }
+    }
+    title="title"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <WithStyles(Card)>
+        <Link
+          to="/"
+        >
+          <WithStyles(Tooltip)
+            title="Delete Note"
+          >
+            <WithStyles(IconButton)
+              onClick={[Function]}
+            >
+              <WithStyles(Icon)>
+                delete
+              </WithStyles(Icon)>
+            </WithStyles(IconButton)>
+          </WithStyles(Tooltip)>
+        </Link>
+        <Link
+          to="/api/notes/undefined"
+        >
+          <WithStyles(CardHeader)
+            classes={
+              Object {
+                "title": "im an object",
+              }
+            }
+            title="title 1"
+          />
+          <WithStyles(CardContent)>
+            <ul>
+              <NoteItems />
+            </ul>
+          </WithStyles(CardContent)>
+        </Link>
+      </WithStyles(Card)>,
+      "enterDelay": 500,
+      "placement": "bottom",
+      "title": "Edit Note",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Link
+            to="/"
+          >
+            <WithStyles(Tooltip)
+              title="Delete Note"
+            >
+              <WithStyles(IconButton)
+                onClick={[Function]}
+              >
+                <WithStyles(Icon)>
+                  delete
+                </WithStyles(Icon)>
+              </WithStyles(IconButton)>
+            </WithStyles(Tooltip)>
+          </Link>,
+          <Link
+            to="/api/notes/undefined"
+          >
+            <WithStyles(CardHeader)
+              classes={
+                Object {
+                  "title": "im an object",
+                }
+              }
+              title="title 1"
+            />
+            <WithStyles(CardContent)>
+              <ul>
+                <NoteItems />
+              </ul>
+            </WithStyles(CardContent)>
+          </Link>,
+        ],
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Tooltip)
+              title="Delete Note"
+            >
+              <WithStyles(IconButton)
+                onClick={[Function]}
+              >
+                <WithStyles(Icon)>
+                  delete
+                </WithStyles(Icon)>
+              </WithStyles(IconButton)>
+            </WithStyles(Tooltip)>,
+            "className": undefined,
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <WithStyles(IconButton)
+                onClick={[Function]}
+              >
+                <WithStyles(Icon)>
+                  delete
+                </WithStyles(Icon)>
+              </WithStyles(IconButton)>,
+              "title": "Delete Note",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <WithStyles(Icon)>
+                  delete
+                </WithStyles(Icon)>,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "delete",
+                },
+                "ref": null,
+                "rendered": "delete",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(CardHeader)
+                classes={
+                  Object {
+                    "title": "im an object",
+                  }
+                }
+                title="title 1"
+              />,
+              <WithStyles(CardContent)>
+                <ul>
+                  <NoteItems />
+                </ul>
+              </WithStyles(CardContent)>,
+            ],
+            "className": undefined,
+            "to": "/api/notes/undefined",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "classes": Object {
+                  "title": "im an object",
+                },
+                "title": "title 1",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <ul>
+                  <NoteItems />
+                </ul>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <NoteItems />,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "noteItems": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "ul",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <WithStyles(Card)>
+          <Link
+            to="/"
+          >
+            <WithStyles(Tooltip)
+              title="Delete Note"
+            >
+              <WithStyles(IconButton)
+                onClick={[Function]}
+              >
+                <WithStyles(Icon)>
+                  delete
+                </WithStyles(Icon)>
+              </WithStyles(IconButton)>
+            </WithStyles(Tooltip)>
+          </Link>
+          <Link
+            to="/api/notes/undefined"
+          >
+            <WithStyles(CardHeader)
+              classes={
+                Object {
+                  "title": "im an object",
+                }
+              }
+              title="title 1"
+            />
+            <WithStyles(CardContent)>
+              <ul>
+                <NoteItems />
+              </ul>
+            </WithStyles(CardContent)>
+          </Link>
+        </WithStyles(Card)>,
+        "enterDelay": 500,
+        "placement": "bottom",
+        "title": "Edit Note",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Link
+              to="/"
+            >
+              <WithStyles(Tooltip)
+                title="Delete Note"
+              >
+                <WithStyles(IconButton)
+                  onClick={[Function]}
+                >
+                  <WithStyles(Icon)>
+                    delete
+                  </WithStyles(Icon)>
+                </WithStyles(IconButton)>
+              </WithStyles(Tooltip)>
+            </Link>,
+            <Link
+              to="/api/notes/undefined"
+            >
+              <WithStyles(CardHeader)
+                classes={
+                  Object {
+                    "title": "im an object",
+                  }
+                }
+                title="title 1"
+              />
+              <WithStyles(CardContent)>
+                <ul>
+                  <NoteItems />
+                </ul>
+              </WithStyles(CardContent)>
+            </Link>,
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <WithStyles(Tooltip)
+                title="Delete Note"
+              >
+                <WithStyles(IconButton)
+                  onClick={[Function]}
+                >
+                  <WithStyles(Icon)>
+                    delete
+                  </WithStyles(Icon)>
+                </WithStyles(IconButton)>
+              </WithStyles(Tooltip)>,
+              "className": undefined,
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <WithStyles(IconButton)
+                  onClick={[Function]}
+                >
+                  <WithStyles(Icon)>
+                    delete
+                  </WithStyles(Icon)>
+                </WithStyles(IconButton)>,
+                "title": "Delete Note",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <WithStyles(Icon)>
+                    delete
+                  </WithStyles(Icon)>,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "delete",
+                  },
+                  "ref": null,
+                  "rendered": "delete",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <WithStyles(CardHeader)
+                  classes={
+                    Object {
+                      "title": "im an object",
+                    }
+                  }
+                  title="title 1"
+                />,
+                <WithStyles(CardContent)>
+                  <ul>
+                    <NoteItems />
+                  </ul>
+                </WithStyles(CardContent)>,
+              ],
+              "className": undefined,
+              "to": "/api/notes/undefined",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "classes": Object {
+                    "title": "im an object",
+                  },
+                  "title": "title 1",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <ul>
+                    <NoteItems />
+                  </ul>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <NoteItems />,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "noteItems": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "ul",
+                },
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

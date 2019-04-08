@@ -17,6 +17,18 @@ ShallowWrapper {
         ],
       }
     }
+    notes={
+      Array [
+        Object {
+          "id": 1,
+          "title": "title 1",
+        },
+        Object {
+          "id": 2,
+          "title": "title 2",
+        },
+      ]
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -37,8 +49,16 @@ ShallowWrapper {
           component={[Function]}
           path="/"
         />,
-        <Connect(Form) />,
-        <Connect(NotesContainer) />,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />,
+        <Route
+          exact={true}
+          path="/api/notes/:id"
+          render={[Function]}
+        />,
       ],
     },
     "ref": null,
@@ -59,7 +79,11 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -68,7 +92,11 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "exact": true,
+          "path": "/api/notes/:id",
+          "render": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -87,8 +115,16 @@ ShallowWrapper {
             component={[Function]}
             path="/"
           />,
-          <Connect(Form) />,
-          <Connect(NotesContainer) />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+          />,
+          <Route
+            exact={true}
+            path="/api/notes/:id"
+            render={[Function]}
+          />,
         ],
       },
       "ref": null,
@@ -109,7 +145,11 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -118,7 +158,11 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "exact": true,
+            "path": "/api/notes/:id",
+            "render": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

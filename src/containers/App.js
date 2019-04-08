@@ -17,7 +17,6 @@ export class App extends Component {
   findNote = (match) => {
     const { notes } = this.props;
     const { id } = match.params;
-    console.log('match params: ', id);
     const note = notes.find(note => note.id === id);
     return <CreateNote edit={true} {...note} />
   }
