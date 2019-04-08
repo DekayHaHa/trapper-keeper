@@ -15,7 +15,7 @@ export const changeNote = (note) => {
 			if (!response.ok) {
 				throw Error(response.statusText);
 			}
-			dispatch(editNote(note))
+			dispatch(editNote(note));
 		} catch (error) {
 			dispatch(hasError(error.message));
 		}
