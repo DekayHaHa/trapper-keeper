@@ -89,6 +89,8 @@ export class CreateNote extends Component {
     const { redirect, open } = this.state;
     if (!open && redirect) {
       return <Redirect to="/" />;
+    }
+  }
 
     renderItems = () => {
         return this.state.itemsList.map((item) => {

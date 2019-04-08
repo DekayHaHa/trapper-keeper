@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { TextField, Tooltip, Checkbox } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import { TextField } from '@material-ui/core';
 
 export class ItemTextField extends Component {
     constructor(props) {
@@ -15,7 +14,7 @@ export class ItemTextField extends Component {
 
     componentWillMount() {
       const { text, isComplete, id } = this.props
-        if (text) {       
+        if (text) {
             this.setState({ text, isComplete, id });
         }
     }

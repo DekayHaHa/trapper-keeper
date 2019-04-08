@@ -25,7 +25,7 @@ export const NoteItems = ({ noteItems, classes }) => {
 
 const styles = {
   divider: {
-    backgroundColor: '#ff8922'
+    backgroundColor: '#9445FF'
   },
   strikethrough: {
     textDecoration: 'line-through'
