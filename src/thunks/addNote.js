@@ -1,5 +1,6 @@
 import { hasError } from '../actions';
 import { getNotes } from './getNotes';
+import { snackbarActions as snackbar } from 'material-ui-snackbar-redux';
 
 export const addNote = (data) => {
   const option = {
@@ -17,6 +18,7 @@ export const addNote = (data) => {
         throw Error(response.statusText);
       }
       dispatch(getNotes());
+      dispatch(snackbar.show({message: 'Note created.'}));
     } catch(error) {
       dispatch(hasError(error.message))
     }
