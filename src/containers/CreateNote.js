@@ -78,27 +78,25 @@ export class CreateNote extends Component {
         }
     }
 
-  removeItem = (id) => {
-    const { itemsList } = this.state;
-    const newList = itemsList.filter(item => item.id !== parseInt(id));
-    console.log(newList)
-    this.setState({ itemsList: newList });
-  }
+    removeItem = (id) => {
+        const { itemsList } = this.state;
+        const newList = itemsList.filter(item => item.id !== parseInt(id));
+        this.setState({ itemsList: newList });
+    }
 
-  renderItems = () => {
-    const { itemsList } = this.state;
-    const completeItems = itemsList.filter(item => item.isComplete === true);
-    const incompleteItems = itemsList.filter(item => item.isComplete === false);
-    return [...incompleteItems.map(item => {
-      console.log(item.isComplete)
-      return (
-        <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} />
-      )
-    }),
-      <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem} />,
-      ...completeItems.map(item => {
-        return <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} />
-    })]
+    renderItems = () => {
+        const { itemsList } = this.state;
+        const completeItems = itemsList.filter(item => item.isComplete === true);
+        const incompleteItems = itemsList.filter(item => item.isComplete === false);
+        return [...incompleteItems.map(item => {
+            return (
+                <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} />
+            )
+        }),
+        <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem} />,
+        ...completeItems.map(item => {
+            return <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} />
+        })]
 
     };
 
@@ -107,7 +105,7 @@ export class CreateNote extends Component {
     };
 
     handleClose = () => {
-      this.setState({ open: false });
+        this.setState({ open: false });
     };
 
     render() {
