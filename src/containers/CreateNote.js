@@ -110,7 +110,7 @@ export class CreateNote extends Component {
         <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} addNewInput={this.addNewInput} />
       )
     }),
-      <ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem} key={Date.now()} addNewInput={this.addNewInput} />,
+      <ItemTextField autoFocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem} key={Date.now()} addNewInput={this.addNewInput} />,
       ...completeItems.map(item => {
         return <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} addNewInput={this.addNewInput} />
     })]
