@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, Tooltip, Checkbox } from '@material-ui/core';
+import { TextField, Tooltip, Checkbox, Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 export class ItemTextField extends Component {
@@ -34,25 +34,36 @@ export class ItemTextField extends Component {
         }
     }
 
-    toggleComplete = (e) => {
+    toggleComplete = e => {
         const { handleIsComplete } = this.props;
         const { id } = e.target.closest('label');
         handleIsComplete(id);
     }
 
-    catchKey = (e) => {
+    deleteItem = e => {
+        const { removeItem } = this.props;
+        const { id } = e.target.closest('label');
+        removeItem(id);
+    }
+
+    catchKey = e => {
         if(e.keyCode === 13) this.sendListItem();
     }
 
     render() {
         const { text, id } = this.state;
+        const { isComplete } = this.props;
         return (
             <div className='item-field-container'>
                 <label id={id} className='label-container'>
                     <Tooltip title='Complete Item' enterDelay={700}>
-                        <Checkbox onClick={(e) => { this.toggleComplete(e) }} />
+                        <Checkbox onClick={(e) => { this.toggleComplete(e) }} checked={isComplete} />
                     </Tooltip>
                     <TextField margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
+                    {
+                        text &&
+                        <Button onClick={this.deleteItem}>X</Button>
+                    }
                 </label>
             </div>
         );

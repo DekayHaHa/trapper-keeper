@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`] = `
+exports[`ItemTextField matches snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ItemTextField />,
@@ -18,55 +18,19 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <TextField
-        fullWidth={true}
-        id="item"
-        label="Item"
-        margin="dense"
-        name="text"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onKeyDown={[Function]}
-        required={false}
-        select={false}
-        type="text"
-        value=""
-        variant="standard"
-      />,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "fullWidth": true,
-        "id": "item",
-        "label": "Item",
-        "margin": "dense",
-        "name": "text",
-        "onBlur": [Function],
-        "onChange": [Function],
-        "onKeyDown": [Function],
-        "required": false,
-        "select": false,
-        "type": "text",
-        "value": "",
-        "variant": "standard",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <TextField
+      "children": <label
+        className="label-container"
+        id={0}
+      >
+        <WithStyles(Tooltip)
+          enterDelay={700}
+          title="Complete Item"
+        >
+          <WithStyles(Checkbox)
+            onClick={[Function]}
+          />
+        </WithStyles(Tooltip)>
+        <TextField
           fullWidth={true}
           id="item"
           label="Item"
@@ -80,31 +44,221 @@ ShallowWrapper {
           type="text"
           value=""
           variant="standard"
-        />,
+        />
+      </label>,
+      "className": "item-field-container",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <WithStyles(Tooltip)
+            enterDelay={700}
+            title="Complete Item"
+          >
+            <WithStyles(Checkbox)
+              onClick={[Function]}
+            />
+          </WithStyles(Tooltip)>,
+          <TextField
+            fullWidth={true}
+            id="item"
+            label="Item"
+            margin="dense"
+            name="text"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            required={false}
+            select={false}
+            type="text"
+            value=""
+            variant="standard"
+          />,
+        ],
+        "className": "label-container",
+        "id": 0,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Checkbox)
+              onClick={[Function]}
+            />,
+            "enterDelay": 700,
+            "title": "Complete Item",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "fullWidth": true,
+            "id": "item",
+            "label": "Item",
+            "margin": "dense",
+            "name": "text",
+            "onBlur": [Function],
+            "onChange": [Function],
+            "onKeyDown": [Function],
+            "required": false,
+            "select": false,
+            "type": "text",
+            "value": "",
+            "variant": "standard",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "label",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <label
+          className="label-container"
+          id={0}
+        >
+          <WithStyles(Tooltip)
+            enterDelay={700}
+            title="Complete Item"
+          >
+            <WithStyles(Checkbox)
+              onClick={[Function]}
+            />
+          </WithStyles(Tooltip)>
+          <TextField
+            fullWidth={true}
+            id="item"
+            label="Item"
+            margin="dense"
+            name="text"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            required={false}
+            select={false}
+            type="text"
+            value=""
+            variant="standard"
+          />
+        </label>,
+        "className": "item-field-container",
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "fullWidth": true,
-          "id": "item",
-          "label": "Item",
-          "margin": "dense",
-          "name": "text",
-          "onBlur": [Function],
-          "onChange": [Function],
-          "onKeyDown": [Function],
-          "required": false,
-          "select": false,
-          "type": "text",
-          "value": "",
-          "variant": "standard",
+          "children": Array [
+            <WithStyles(Tooltip)
+              enterDelay={700}
+              title="Complete Item"
+            >
+              <WithStyles(Checkbox)
+                onClick={[Function]}
+              />
+            </WithStyles(Tooltip)>,
+            <TextField
+              fullWidth={true}
+              id="item"
+              label="Item"
+              margin="dense"
+              name="text"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              required={false}
+              select={false}
+              type="text"
+              value=""
+              variant="standard"
+            />,
+          ],
+          "className": "label-container",
+          "id": 0,
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <WithStyles(Checkbox)
+                onClick={[Function]}
+              />,
+              "enterDelay": 700,
+              "title": "Complete Item",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "fullWidth": true,
+              "id": "item",
+              "label": "Item",
+              "margin": "dense",
+              "name": "text",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onKeyDown": [Function],
+              "required": false,
+              "select": false,
+              "type": "text",
+              "value": "",
+              "variant": "standard",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "label",
       },
       "type": "div",
     },
