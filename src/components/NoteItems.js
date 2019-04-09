@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Typography } from '@material-ui/core'
+import { Divider, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 export const NoteItems = ({ noteItems, classes }) => {
