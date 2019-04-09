@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { App, mapDispatchToProps, mapStateToProps } from '../containers/App';
 import { shallow } from 'enzyme';
 import { getNotes } from '../thunks/getNotes';
-import CreateNote from '../containers/CreateNote';
 
 jest.mock('../thunks/getNotes');
 jest.mock('../containers/CreateNote');
@@ -53,7 +51,7 @@ describe('App', () => {
       expect(results).toEqual(expected)
     })
   })
-  
+
   describe('mapStateToProps', () => {
     it('returns an object with notes', () => {
       const mockState = {

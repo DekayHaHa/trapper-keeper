@@ -1,10 +1,12 @@
 import React from 'react';
 import { CreateNote, mapDispatchToProps } from '../containers/CreateNote';
 import { addNote } from '../thunks/addNote';
+import { changeNote } from '../thunks/changeNote';
 import { shallow } from 'enzyme';
 import { ItemTextField } from '../containers/ItemTextField';
 
 jest.mock('../thunks/addNote');
+jest.mock('../thunks/changeNote');
 
 describe('', () => {
 	let wrapper;
@@ -12,7 +14,7 @@ describe('', () => {
 	beforeEach(() => {
 		mockFn = jest.fn();
 		wrapper = shallow(
-			<CreateNote addNote={mockFn} />
+			<CreateNote changeNote={mockFn} addNote={mockFn} />
 		);
 	})
 

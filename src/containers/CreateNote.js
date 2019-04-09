@@ -8,75 +8,75 @@ import { changeNote } from '../thunks/changeNote';
 import { Redirect } from 'react-router-dom'
 
 export class CreateNote extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: '',
-      itemsList: [],
-      open: false,
-      redirect: false
+    constructor() {
+        super();
+        this.state = {
+            title: '',
+            itemsList: [],
+            open: false,
+            redirect: false
+        };
+    }
+
+    componentWillMount() {
+        const { title, itemsList } = this.props;
+        if (title) {
+            this.setState({ title, itemsList, open: true });
+        }
+    }
+
+    handleChange = e => {
+        const { value, name } = e.target;
+        this.setState({ [name]: value });
     };
-  }
 
-  componentWillMount() {
-    const { title, itemsList } = this.props;
-    if (title) {
-      this.setState({ title, itemsList, open: true });
+    addListItem = text => {
+        const { itemsList } = this.state;
+        if (text) {
+            const newItem = { text, isComplete: false, id: Date.now() };
+            this.setState({
+                itemsList: [...itemsList, newItem],
+                item: ''
+            });
+        }
+    };
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const { title, itemsList } = this.state;
+        const { edit, changeNote, addNote, id } = this.props;
+        const data = { title, itemsList };
+        edit ? changeNote({ id, title, itemsList }) : addNote(data);
+        this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
+            this.setState({ redirect: false })
+        })
+    };
+
+    handleIsComplete = id => {
+        const { itemsList } = this.state;
+        const changedItemList = itemsList.map(item => {
+            if (item.id === parseInt(id)) {
+                item.isComplete = !item.isComplete;
+            }
+            return item;
+        });
+        this.setState({ itemsList: changedItemList });
     }
-  }
 
-  handleChange = e => {
-    const { value, name } = e.target;
-    this.setState({ [name]: value });
-  };
+    updateItem = item => {
+        const { itemsList } = this.state;
+        const newItems = itemsList.map(val => {
+            return item.id === val.id ? { ...item } : val;
+        });
+        this.setState({ itemsList: newItems.filter(val => val.text) });
+    };
 
-  addListItem = text => {
-    const { itemsList } = this.state;
-    if (text) {
-      const newItem = { text, isComplete: false, id: Date.now() };
-      this.setState({
-        itemsList: [...itemsList, newItem],
-        item: ''
-      });
+    checkRedirect = () => {
+        const { redirect, open } = this.state;
+        if (!open && redirect) {
+            return <Redirect to="/" />;
+        }
     }
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { title, itemsList } = this.state;
-    const { edit, changeNote, addNote, id } = this.props;
-    const data = { title, itemsList };
-    edit ? changeNote({ id, title, itemsList }) : addNote(data);
-    this.setState({ itemsList: [], title: '', open: false, redirect: true }, () => {
-      this.setState({ redirect: false })
-    })
-  };
-
-  handleIsComplete = id => {
-    const { itemsList } = this.state;
-    const changedItemList = itemsList.map(item => {
-      if (item.id === parseInt(id)) {
-        item.isComplete = !item.isComplete;
-      }
-      return item;
-    });
-    this.setState({ itemsList: changedItemList });
-  }
-
-  updateItem = item => {
-    const { itemsList } = this.state;
-    const newItems = itemsList.map(val => {
-      return item.id === val.id ? { ...item } : val;
-    });
-    this.setState({ itemsList: newItems.filter(val => val.text) });
-  };
-
-  checkRedirect = () => {
-    const { redirect, open } = this.state;
-    if (!open && redirect) {
-      return <Redirect to="/" />;
-    }
-  }
 
     renderItems = () => {
         return this.state.itemsList.map((item) => {
@@ -119,7 +119,7 @@ export class CreateNote extends Component {
             </div>
         );
     }
-  }
+}
 
 
 
