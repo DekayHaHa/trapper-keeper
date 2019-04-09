@@ -1,6 +1,6 @@
 # Task Mancer
 A Google Keep look-a-like for tracking tasks and their completion.
-by: 
+### By:
 - Devin Kapla - [GitHub](https://github.com/DekayHaHa) - [LinkIn](https://www.linkedin.com/in/devinkapla/)
 - Liz Asbell - [GitHub]() - [LinkIn]()
 - Isaac Sunoo - [GitHub]() - [LinkIn]()
