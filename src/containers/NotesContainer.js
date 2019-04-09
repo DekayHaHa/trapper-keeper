@@ -15,11 +15,9 @@ export class NotesContainer extends Component {
       </Grid>
     ));
     return (
-      // <div className='notes-container'>
         <Grid container justify='flex-start' alignItems='center'>
           {renderNotes}
         </Grid>
-      // </div>
     )
   }
 }
