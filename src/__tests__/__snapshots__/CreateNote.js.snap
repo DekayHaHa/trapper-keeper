@@ -61,6 +61,7 @@ ShallowWrapper {
             <ItemTextField
               addListItem={[Function]}
               autofocus={true}
+              handleIsComplete={[Function]}
             />
           </WithStyles(DialogTitle)>
           <WithStyles(DialogActions)>
@@ -160,6 +161,7 @@ ShallowWrapper {
               <ItemTextField
                 addListItem={[Function]}
                 autofocus={true}
+                handleIsComplete={[Function]}
               />
             </WithStyles(DialogTitle)>,
             <WithStyles(DialogActions)>
@@ -211,6 +213,7 @@ ShallowWrapper {
                 <ItemTextField
                   addListItem={[Function]}
                   autofocus={true}
+                  handleIsComplete={[Function]}
                 />,
               ],
             },
@@ -244,6 +247,7 @@ ShallowWrapper {
                 "props": Object {
                   "addListItem": [Function],
                   "autofocus": true,
+                  "handleIsComplete": [Function],
                 },
                 "ref": null,
                 "rendered": null,
@@ -382,6 +386,7 @@ ShallowWrapper {
               <ItemTextField
                 addListItem={[Function]}
                 autofocus={true}
+                handleIsComplete={[Function]}
               />
             </WithStyles(DialogTitle)>
             <WithStyles(DialogActions)>
@@ -481,6 +486,7 @@ ShallowWrapper {
                 <ItemTextField
                   addListItem={[Function]}
                   autofocus={true}
+                  handleIsComplete={[Function]}
                 />
               </WithStyles(DialogTitle)>,
               <WithStyles(DialogActions)>
@@ -532,6 +538,7 @@ ShallowWrapper {
                   <ItemTextField
                     addListItem={[Function]}
                     autofocus={true}
+                    handleIsComplete={[Function]}
                   />,
                 ],
               },
@@ -565,6 +572,7 @@ ShallowWrapper {
                   "props": Object {
                     "addListItem": [Function],
                     "autofocus": true,
+                    "handleIsComplete": [Function],
                   },
                   "ref": null,
                   "rendered": null,
