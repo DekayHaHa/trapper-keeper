@@ -23,95 +23,199 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
+      "alignItems": "center",
       "children": Array [
-        <WithStyles(Connect(NoteCard))
-          note="note"
-        />,
-        <WithStyles(Connect(NoteCard))
-          note="note"
-        />,
+        <WithStyles(Grid)
+          item={true}
+          lg={2}
+          md={4}
+          sm={6}
+          xs={12}
+        >
+          <WithStyles(Connect(NoteCard))
+            note="note"
+          />
+        </WithStyles(Grid)>,
+        <WithStyles(Grid)
+          item={true}
+          lg={2}
+          md={4}
+          sm={6}
+          xs={12}
+        >
+          <WithStyles(Connect(NoteCard))
+            note="note"
+          />
+        </WithStyles(Grid)>,
       ],
-      "className": "notes-container",
+      "container": true,
+      "justify": "flex-start",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "f264bbc9-9ee6-4f4d-8ec7-1876c7be362d",
         "nodeType": "class",
         "props": Object {
-          "deleteNote": undefined,
-          "note": "note",
-          "title": undefined,
+          "children": <WithStyles(Connect(NoteCard))
+            note="note"
+          />,
+          "item": true,
+          "lg": 2,
+          "md": 4,
+          "sm": 6,
+          "xs": 12,
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "deleteNote": undefined,
+            "note": "note",
+            "title": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         "type": [Function],
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "04952628-1c75-4eb2-9749-7ab7331e5de7",
         "nodeType": "class",
         "props": Object {
-          "deleteNote": undefined,
-          "note": "note",
-          "title": undefined,
+          "children": <WithStyles(Connect(NoteCard))
+            note="note"
+          />,
+          "item": true,
+          "lg": 2,
+          "md": 4,
+          "sm": 6,
+          "xs": 12,
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "deleteNote": undefined,
+            "note": "note",
+            "title": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         "type": [Function],
       },
     ],
-    "type": "div",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
+        "alignItems": "center",
         "children": Array [
-          <WithStyles(Connect(NoteCard))
-            note="note"
-          />,
-          <WithStyles(Connect(NoteCard))
-            note="note"
-          />,
+          <WithStyles(Grid)
+            item={true}
+            lg={2}
+            md={4}
+            sm={6}
+            xs={12}
+          >
+            <WithStyles(Connect(NoteCard))
+              note="note"
+            />
+          </WithStyles(Grid)>,
+          <WithStyles(Grid)
+            item={true}
+            lg={2}
+            md={4}
+            sm={6}
+            xs={12}
+          >
+            <WithStyles(Connect(NoteCard))
+              note="note"
+            />
+          </WithStyles(Grid)>,
         ],
-        "className": "notes-container",
+        "container": true,
+        "justify": "flex-start",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "f264bbc9-9ee6-4f4d-8ec7-1876c7be362d",
           "nodeType": "class",
           "props": Object {
-            "deleteNote": undefined,
-            "note": "note",
-            "title": undefined,
+            "children": <WithStyles(Connect(NoteCard))
+              note="note"
+            />,
+            "item": true,
+            "lg": 2,
+            "md": 4,
+            "sm": 6,
+            "xs": 12,
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "deleteNote": undefined,
+              "note": "note",
+              "title": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "04952628-1c75-4eb2-9749-7ab7331e5de7",
           "nodeType": "class",
           "props": Object {
-            "deleteNote": undefined,
-            "note": "note",
-            "title": undefined,
+            "children": <WithStyles(Connect(NoteCard))
+              note="note"
+            />,
+            "item": true,
+            "lg": 2,
+            "md": 4,
+            "sm": 6,
+            "xs": 12,
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "deleteNote": undefined,
+              "note": "note",
+              "title": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
-      "type": "div",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

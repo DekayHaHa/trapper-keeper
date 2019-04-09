@@ -61,6 +61,7 @@ ShallowWrapper {
             />
             <ItemTextField
               addListItem={[Function]}
+              addNewInput={[Function]}
               autofocus={true}
               handleIsComplete={[Function]}
               removeItem={[Function]}
@@ -162,6 +163,7 @@ ShallowWrapper {
               />
               <ItemTextField
                 addListItem={[Function]}
+                addNewInput={[Function]}
                 autofocus={true}
                 handleIsComplete={[Function]}
                 removeItem={[Function]}
@@ -215,6 +217,7 @@ ShallowWrapper {
                 Array [
                   <ItemTextField
                     addListItem={[Function]}
+                    addNewInput={[Function]}
                     autofocus={true}
                     handleIsComplete={[Function]}
                     removeItem={[Function]}
@@ -247,10 +250,11 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": undefined,
+                "key": "1554832398511",
                 "nodeType": "class",
                 "props": Object {
                   "addListItem": [Function],
+                  "addNewInput": [Function],
                   "autofocus": true,
                   "handleIsComplete": [Function],
                   "removeItem": [Function],
@@ -391,6 +395,7 @@ ShallowWrapper {
               />
               <ItemTextField
                 addListItem={[Function]}
+                addNewInput={[Function]}
                 autofocus={true}
                 handleIsComplete={[Function]}
                 removeItem={[Function]}
@@ -492,6 +497,7 @@ ShallowWrapper {
                 />
                 <ItemTextField
                   addListItem={[Function]}
+                  addNewInput={[Function]}
                   autofocus={true}
                   handleIsComplete={[Function]}
                   removeItem={[Function]}
@@ -545,6 +551,7 @@ ShallowWrapper {
                   Array [
                     <ItemTextField
                       addListItem={[Function]}
+                      addNewInput={[Function]}
                       autofocus={true}
                       handleIsComplete={[Function]}
                       removeItem={[Function]}
@@ -577,10 +584,11 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": undefined,
+                  "key": "1554832398511",
                   "nodeType": "class",
                   "props": Object {
                     "addListItem": [Function],
+                    "addNewInput": [Function],
                     "autofocus": true,
                     "handleIsComplete": [Function],
                     "removeItem": [Function],

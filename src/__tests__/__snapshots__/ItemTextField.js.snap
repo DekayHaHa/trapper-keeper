@@ -40,6 +40,7 @@ ShallowWrapper {
           onBlur={[Function]}
           onChange={[Function]}
           onKeyDown={[Function]}
+          onKeyUp={[Function]}
           required={false}
           select={false}
           type="text"
@@ -75,6 +76,7 @@ ShallowWrapper {
             onBlur={[Function]}
             onChange={[Function]}
             onKeyDown={[Function]}
+            onKeyUp={[Function]}
             required={false}
             select={false}
             type="text"
@@ -129,6 +131,7 @@ ShallowWrapper {
             "onBlur": [Function],
             "onChange": [Function],
             "onKeyDown": [Function],
+            "onKeyUp": [Function],
             "required": false,
             "select": false,
             "type": "text",
@@ -173,6 +176,7 @@ ShallowWrapper {
             onBlur={[Function]}
             onChange={[Function]}
             onKeyDown={[Function]}
+            onKeyUp={[Function]}
             required={false}
             select={false}
             type="text"
@@ -208,6 +212,7 @@ ShallowWrapper {
               onBlur={[Function]}
               onChange={[Function]}
               onKeyDown={[Function]}
+              onKeyUp={[Function]}
               required={false}
               select={false}
               type="text"
@@ -262,6 +267,7 @@ ShallowWrapper {
               "onBlur": [Function],
               "onChange": [Function],
               "onKeyDown": [Function],
+              "onKeyUp": [Function],
               "required": false,
               "select": false,
               "type": "text",
