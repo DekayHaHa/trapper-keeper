@@ -26,4 +26,4 @@ export const newNote = newNote => ({
 export const editNote = note => ({
   type: 'EDIT_NOTE',
   note
-})
+});
