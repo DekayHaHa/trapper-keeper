@@ -5,6 +5,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CreateNote
     addNote={[MockFunction]}
+    changeNote={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -62,6 +63,7 @@ ShallowWrapper {
               addListItem={[Function]}
               autofocus={true}
               handleIsComplete={[Function]}
+              removeItem={[Function]}
             />
           </WithStyles(DialogTitle)>
           <WithStyles(DialogActions)>
@@ -162,6 +164,7 @@ ShallowWrapper {
                 addListItem={[Function]}
                 autofocus={true}
                 handleIsComplete={[Function]}
+                removeItem={[Function]}
               />
             </WithStyles(DialogTitle)>,
             <WithStyles(DialogActions)>
@@ -209,12 +212,14 @@ ShallowWrapper {
                   value=""
                   variant="standard"
                 />,
-                Array [],
-                <ItemTextField
-                  addListItem={[Function]}
-                  autofocus={true}
-                  handleIsComplete={[Function]}
-                />,
+                Array [
+                  <ItemTextField
+                    addListItem={[Function]}
+                    autofocus={true}
+                    handleIsComplete={[Function]}
+                    removeItem={[Function]}
+                  />,
+                ],
               ],
             },
             "ref": null,
@@ -248,6 +253,7 @@ ShallowWrapper {
                   "addListItem": [Function],
                   "autofocus": true,
                   "handleIsComplete": [Function],
+                  "removeItem": [Function],
                 },
                 "ref": null,
                 "rendered": null,
@@ -387,6 +393,7 @@ ShallowWrapper {
                 addListItem={[Function]}
                 autofocus={true}
                 handleIsComplete={[Function]}
+                removeItem={[Function]}
               />
             </WithStyles(DialogTitle)>
             <WithStyles(DialogActions)>
@@ -487,6 +494,7 @@ ShallowWrapper {
                   addListItem={[Function]}
                   autofocus={true}
                   handleIsComplete={[Function]}
+                  removeItem={[Function]}
                 />
               </WithStyles(DialogTitle)>,
               <WithStyles(DialogActions)>
@@ -534,12 +542,14 @@ ShallowWrapper {
                     value=""
                     variant="standard"
                   />,
-                  Array [],
-                  <ItemTextField
-                    addListItem={[Function]}
-                    autofocus={true}
-                    handleIsComplete={[Function]}
-                  />,
+                  Array [
+                    <ItemTextField
+                      addListItem={[Function]}
+                      autofocus={true}
+                      handleIsComplete={[Function]}
+                      removeItem={[Function]}
+                    />,
+                  ],
                 ],
               },
               "ref": null,
@@ -573,6 +583,7 @@ ShallowWrapper {
                     "addListItem": [Function],
                     "autofocus": true,
                     "handleIsComplete": [Function],
+                    "removeItem": [Function],
                   },
                   "ref": null,
                   "rendered": null,

@@ -1,10 +1,13 @@
 import React from 'react';
 import { CreateNote, mapDispatchToProps } from '../containers/CreateNote';
 import { addNote } from '../thunks/addNote';
+import { changeNote } from '../thunks/changeNote';
 import { shallow } from 'enzyme';
 import { ItemTextField } from '../containers/ItemTextField';
+import { Redirect } from 'react-router-dom'
 
 jest.mock('../thunks/addNote');
+jest.mock('../thunks/changeNote');
 
 describe('', () => {
 	let wrapper;
@@ -12,7 +15,7 @@ describe('', () => {
 	beforeEach(() => {
 		mockFn = jest.fn();
 		wrapper = shallow(
-			<CreateNote addNote={mockFn} />
+			<CreateNote changeNote={mockFn} addNote={mockFn} />
 		);
 	})
 
@@ -54,17 +57,79 @@ describe('', () => {
 	})
 
 	describe('handle submit', () => {
-		it('should fire changeNote with new edit if edit is true', () => {
+		const mockEvent = { preventDefault: () => { } }
 
+		it.skip('should fire changeNote with new edit if edit is true', () => {
+			wrapper.instance().handleSubmit(mockEvent)
+			expect(wrapper.props.changeNote).toHaveBeenCalled()
 		})
 
-		it('should fire addNote with data if edit is false', () => {
+		it.skip('should fire addNote with data if edit is false', () => {
 
 		})
 
 		it('should reset state', () => {
-
+			wrapper.setState({
+				title: 'title',
+				itemsList: ['items'],
+				open: true,
+				redirect: true
+			})
+			wrapper.instance().handleSubmit(mockEvent)
+			expect(wrapper.state()).toEqual({
+				title: '',
+				itemsList: [],
+				open: false,
+				redirect: false
+			})
 		})
+	})
+
+	it('should toggle a single items complete key', () => {
+		wrapper.setState({
+			itemsList: [
+				{ id: 1, isComplete: false },
+				{ id: 2, isComplete: false }
+			]
+		})
+		wrapper.instance().handleIsComplete(2)
+		expect(wrapper.state('itemsList')).toEqual([
+			{ id: 1, isComplete: false },
+			{ id: 2, isComplete: true }
+		])
+	})
+
+	it('should update single item by id', () => {
+		wrapper.setState({
+			itemsList: [
+				{ id: 1, isComplete: false, text: 'first' },
+				{ id: 2, isComplete: false, text: 'second' }
+			]
+		})
+		wrapper.instance().updateItem({ id: 2, isComplete: true, text: 'found' })
+		expect(wrapper.state('itemsList')).toEqual([
+			{ id: 1, isComplete: false, text: 'first' },
+			{ id: 2, isComplete: true, text: 'found' }
+		])
+	})
+
+	it('should redirect after saving note', () => {
+		wrapper.setState({ redirect: true })
+		const result = wrapper.instance().checkRedirect()
+		expect(result).toEqual(<Redirect to="/" />)
+	})
+
+	it('should remove item by id', () => {
+		wrapper.setState({
+			itemsList: [
+				{ id: 1, isComplete: false, text: 'first' },
+				{ id: 2, isComplete: false, text: 'second' }
+			]
+		})
+		wrapper.instance().removeItem(1)
+		expect(wrapper.state('itemsList')).toEqual([
+			{ id: 2, isComplete: false, text: 'second' }
+		])
 	})
 
 	describe('mapDispatchToProps', () => {

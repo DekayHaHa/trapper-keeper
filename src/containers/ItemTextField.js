@@ -13,7 +13,7 @@ export class ItemTextField extends Component {
     }
 
     componentWillMount() {
-      const { text, isComplete, id } = this.props
+        const { text, isComplete, id } = this.props
         if (text) {
             this.setState({ text, isComplete, id });
         }
@@ -47,7 +47,7 @@ export class ItemTextField extends Component {
     }
 
     catchKey = e => {
-        if(e.keyCode === 13) this.sendListItem();
+        if (e.keyCode === 13) this.sendListItem();
     }
 
     render() {
@@ -57,12 +57,13 @@ export class ItemTextField extends Component {
             <div className='item-field-container'>
                 <label id={id} className='label-container'>
                     <Tooltip title='Complete Item' enterDelay={700}>
-                        <Checkbox onClick={(e) => { this.toggleComplete(e) }} checked={isComplete} />
+                        <Checkbox className='checkbox'
+                            onClick={(e) => { this.toggleComplete(e) }} checked={isComplete} />
                     </Tooltip>
                     <TextField margin='dense' id='item' label='Item' type='text' name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} onKeyDown={this.catchKey} onKeyUp={(e) => { addNewInput(e) }} fullWidth />
                     {
                         text &&
-                        <Button onClick={this.deleteItem}>X</Button>
+                        <Button className='button' onClick={this.deleteItem}>X</Button>
                     }
                 </label>
             </div>

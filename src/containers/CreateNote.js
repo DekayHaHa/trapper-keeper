@@ -8,38 +8,38 @@ import { changeNote } from '../thunks/changeNote';
 import { Redirect } from 'react-router-dom'
 
 export class CreateNote extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: '',
-      itemsList: [],
-      open: false,
-      redirect: false
+    constructor() {
+        super();
+        this.state = {
+            title: '',
+            itemsList: [],
+            open: false,
+            redirect: false
+        };
+    }
+
+    componentWillMount() {
+        const { title, itemsList } = this.props;
+        if (title) {
+            this.setState({ title, itemsList, open: true });
+        }
+    }
+
+    handleChange = e => {
+        const { value, name } = e.target;
+        this.setState({ [name]: value });
     };
-  }
 
-  componentWillMount() {
-    const { title, itemsList } = this.props;
-    if (title) {
-      this.setState({ title, itemsList, open: true });
-    }
-  }
-
-  handleChange = e => {
-    const { value, name } = e.target;
-    this.setState({ [name]: value });
-  };
-
-  addListItem = text => {
-    const { itemsList } = this.state;
-    if (text) {
-      const newItem = { text, isComplete: false, id: Date.now() };
-      this.setState({
-        itemsList: [...itemsList, newItem],
-        item: ''
-      });
-    }
-  };
+    addListItem = text => {
+        const { itemsList } = this.state;
+        if (text) {
+            const newItem = { text, isComplete: false, id: Date.now() };
+            this.setState({
+                itemsList: [...itemsList, newItem],
+                item: ''
+            });
+        }
+    };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -81,7 +81,6 @@ export class CreateNote extends Component {
   removeItem = (id) => {
     const { itemsList } = this.state;
     const newList = itemsList.filter(item => item.id !== parseInt(id));
-    console.log(newList)
     this.setState({ itemsList: newList });
   }
 
@@ -123,7 +122,7 @@ export class CreateNote extends Component {
     };
 
     handleClose = () => {
-      this.setState({ open: false });
+        this.setState({ open: false });
     };
 
     render() {
@@ -152,9 +151,7 @@ export class CreateNote extends Component {
             </div>
         );
     }
-  }
-
-
+}
 
 CreateNote.propTypes = {
     id: PropTypes.string,
