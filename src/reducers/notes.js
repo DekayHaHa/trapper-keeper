@@ -14,7 +14,7 @@ export const notes = (state = [], action) => {
       const hoverId = mutatedState.find(note => action.overId === note.id);
       const indexInitial = mutatedState.indexOf(initialId);
       const indexHover = mutatedState.indexOf(hoverId);
-      const throwVar = [mutatedState[indexInitial], mutatedState[indexHover]] = [mutatedState[indexHover], mutatedState[indexInitial]];
+      [mutatedState[indexInitial], mutatedState[indexHover]] = [mutatedState[indexHover], mutatedState[indexInitial]];
       return mutatedState;
     default:
       return state;

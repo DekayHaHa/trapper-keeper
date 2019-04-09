@@ -8,38 +8,38 @@ import { changeNote } from '../thunks/changeNote';
 import { Redirect } from 'react-router-dom'
 
 export class CreateNote extends Component {
-    constructor() {
-        super();
-        this.state = {
-            title: '',
-            itemsList: [],
-            open: false,
-            redirect: false
-        };
-    }
+  constructor() {
+      super();
+      this.state = {
+          title: '',
+          itemsList: [],
+          open: false,
+          redirect: false
+      };
+  }
 
-    componentWillMount() {
-        const { title, itemsList } = this.props;
-        if (title) {
-            this.setState({ title, itemsList, open: true });
-        }
-    }
+  componentWillMount() {
+      const { title, itemsList } = this.props;
+      if (title) {
+          this.setState({ title, itemsList, open: true });
+      }
+  }
 
-    handleChange = e => {
-        const { value, name } = e.target;
-        this.setState({ [name]: value });
+  handleChange = e => {
+      const { value, name } = e.target;
+      this.setState({ [name]: value });
+  };
+
+  addListItem = text => {
+    const { itemsList } = this.state;
+    if (text) {
+      const newItem = { text, isComplete: false, id: Date.now() };
+      this.setState({
+        itemsList: [...itemsList, newItem],
+        item: ''
+      });
     };
-
-    addListItem = text => {
-        const { itemsList } = this.state;
-        if (text) {
-            const newItem = { text, isComplete: false, id: Date.now() };
-            this.setState({
-                itemsList: [...itemsList, newItem],
-                item: ''
-            });
-        }
-    };
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -114,8 +114,7 @@ export class CreateNote extends Component {
       ...completeItems.map(item => {
         return <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} addNewInput={this.addNewInput} />
     })]
-
-    };
+  };
 
     handleClickOpen = () => {
         this.setState({ open: true });
@@ -126,30 +125,30 @@ export class CreateNote extends Component {
     };
 
     render() {
-        const { open, title } = this.state;
+      const { open, title } = this.state;
 
-        return (
-            <div>
-                {this.checkRedirect()}
-                <Tooltip title='Create Note' placement='bottom'>
-                    <Button color='primary' onClick={this.handleClickOpen}><span className='add-note-btn'>+</span></Button>
-                </Tooltip>
-                <Dialog open={open} onClose={this.handleClose} aria-labelledby='form-dialog-title' transitionDuration={800} className='dialog-box'>
-                    <DialogTitle>
-                        <TextField margin='dense' id='title' label='Title' type='text' name='title' value={title} onChange={this.handleChange} fullWidth />
-                        {
-                            this.renderItems()
-                        }
-                    </DialogTitle>
-                    <DialogActions>
-                        <form className='form-btns'>
-                            <Button color='primary'>+</Button>
-                            <Button type='submit' onClick={this.handleSubmit} color='primary'>Save Note</Button>
-                        </form>
-                    </DialogActions>
-                </Dialog>
-            </div>
-        );
+      return (
+        <div>
+          {this.checkRedirect()}
+          <Tooltip title='Create Note' placement='bottom'>
+            <Button color='primary' onClick={this.handleClickOpen}><span className='add-note-btn'>+</span></Button>
+          </Tooltip>
+          <Dialog open={open} onClose={this.handleClose} aria-labelledby='form-dialog-title' transitionDuration={800} className='dialog-box'>
+            <DialogTitle>
+              <TextField margin='dense' id='title' label='Title' type='text' name='title' value={title} onChange={this.handleChange} fullWidth />
+                {
+                    this.renderItems()
+                }
+            </DialogTitle>
+            <DialogActions>
+              <form className='form-btns'>
+                <Button color='primary'>+</Button>
+                <Button type='submit' onClick={this.handleSubmit} color='primary'>Save Note</Button>
+              </form>
+            </DialogActions>
+          </Dialog>
+        </div>
+      );
     }
 }
 

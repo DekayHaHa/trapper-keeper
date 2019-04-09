@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Card, Tooltip, IconButton, CardContent, CardHeader } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
@@ -27,8 +27,6 @@ export class NoteCard extends Component {
 
     onDragEnd = () => {
         const { changeNoteOrder, notes } = this.props;
-        console.log(notes)
-        console.log('drag end entered')
         changeNoteOrder(notes);
     }
 
