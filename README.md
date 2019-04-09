@@ -12,3 +12,9 @@ A Google Keep look-a-like for tracking tasks and their completion.
 - NPM install for frontend
 - NPM Start backend and then the frontend
 
+## Team Notes
+
+## WireFrame
+
+## Project SnapShot
+
