@@ -8,7 +8,6 @@ export const Header = () => {
       <Link to="/" className='link-style'>
         <h1>Task Mancer</h1>
       </Link>
-      {/* <h1>Task Mancer</h1> */}
       <Link to="/api/new-note" className="new-note-btn">
         <CreateNote />
       </Link>

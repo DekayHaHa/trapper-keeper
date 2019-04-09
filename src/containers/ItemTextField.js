@@ -52,14 +52,14 @@ export class ItemTextField extends Component {
 
     render() {
         const { text, id } = this.state;
-        const { isComplete } = this.props;
+        const { isComplete, addNewInput } = this.props;
         return (
             <div className='item-field-container'>
                 <label id={id} className='label-container'>
                     <Tooltip title='Complete Item' enterDelay={700}>
                         <Checkbox onClick={(e) => { this.toggleComplete(e) }} checked={isComplete} />
                     </Tooltip>
-                    <TextField margin="dense" id="item" label="Item" type="text" name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} onKeyDown={this.catchKey} fullWidth />
+                    <TextField margin='dense' id='item' label='Item' type='text' name='text' value={text} onBlur={this.sendListItem} onChange={this.handleChange} onKeyDown={this.catchKey} onKeyUp={(e) => { addNewInput(e) }} fullWidth />
                     {
                         text &&
                         <Button onClick={this.deleteItem}>X</Button>

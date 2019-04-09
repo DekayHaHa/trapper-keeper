@@ -46,7 +46,7 @@ const styles = {
         textDecoration: 'none'
     },
     card: {
-        margin: 12,
+        margin: 15,
         minWidth: 275,
         display: 'inline-block'
     },
