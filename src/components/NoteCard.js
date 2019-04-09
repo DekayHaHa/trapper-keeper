@@ -7,13 +7,27 @@ import { Link } from 'react-router-dom';
 import NoteItems from './NoteItems';
 import Icon from '@material-ui/core/Icon';
 import { deleteNote } from '../thunks/deleteNote';
+import { dragNote, setStartId } from '../actions';
 
 export class NoteCard extends Component {
+    onDragStart = (startingId) => {
+        const { setStartId } = this.props;
+        setStartId(startingId);
+    }
+
+    onDragOver = (dragId) => {
+        const { dragNote, dragStartId } = this.props;
+        if (dragId === dragStartId) {
+            return;
+        } else {
+            dragNote(dragStartId, dragId);
+        }
+    }
 
     render() {
         const { note, classes, deleteNote } = this.props;
         return (
-            <Tooltip title='Edit Note' placement='bottom' enterDelay={500}>
+            <Tooltip draggable onDragStart={() => { this.onDragStart(note.id) }} onDragOver={() => { this.onDragOver(note.id) }} onDragEnd={() => { console.log('drag end') }} title='Edit Note' placement='bottom' id={note.id} enterDelay={500}>
                 <Card className={classes.card}>
                     <Link to='/' className={classes.delete}>
                         <Tooltip title='Delete Note'>
@@ -59,8 +73,15 @@ const styles = {
     }
 };
 
-export const mapDispatchToProps = (dispatch) => ({
-    deleteNote: (id) => dispatch(deleteNote(id))
+export const mapDispatchToProps = dispatch => ({
+    deleteNote: id => dispatch(deleteNote(id)),
+    dragNote: (startId, overId) => dispatch(dragNote(startId, overId)),
+    setStartId: startId => dispatch(setStartId(startId))
 });
 
-export default withStyles(styles)(connect(null, mapDispatchToProps)(NoteCard));
+export const mapStateToProps = state => ({
+    dragStartId: state.setStartId
+});
+
+
+export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(NoteCard));

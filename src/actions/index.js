@@ -26,4 +26,15 @@ export const newNote = newNote => ({
 export const editNote = note => ({
   type: 'EDIT_NOTE',
   note
-})
+});
+
+export const dragNote = (startId, overId) => ({
+  type: 'DRAG_NOTE',
+  startId,
+  overId
+});
+
+export const setStartId = startId => ({
+  type: 'SET_START_ID',
+  startId
+});
