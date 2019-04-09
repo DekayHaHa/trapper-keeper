@@ -3,7 +3,12 @@
 exports[`ItemTextField matches snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ItemTextField />,
+  Symbol(enzyme.__unrendered__): <ItemTextField
+    addListItem={[MockFunction]}
+    handleIsComplete={[MockFunction]}
+    removeItem={[MockFunction]}
+    updateItem={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],

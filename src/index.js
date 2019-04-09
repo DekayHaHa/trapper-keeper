@@ -7,6 +7,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './containers/App';
 import thunk from 'redux-thunk';
+import { SnackbarProvider } from 'material-ui-snackbar-redux';
 import './styles/index.scss';
 
 const store = createStore(
@@ -16,8 +17,10 @@ const store = createStore(
 
 ReactDOM.render(
 	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
+		<SnackbarProvider SnackbarProps={{ autoHideDuration: 3000 }}>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</SnackbarProvider>
 	</Provider>,
 document.getElementById('root'));

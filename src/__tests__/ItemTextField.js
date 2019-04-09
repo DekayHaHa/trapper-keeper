@@ -4,10 +4,18 @@ import { shallow } from 'enzyme';
 
 describe('ItemTextField', () => {
   let wrapper;
+  let mockFn;
 
   beforeEach(() => {
+    mockFn = jest.fn();
     wrapper = shallow(
-      <ItemTextField />);
+      <ItemTextField
+        updateItem={mockFn} 
+        addListItem={mockFn}
+        removeItem={mockFn}
+        handleIsComplete={mockFn}
+      />); 
+  
   })
 
   it('matches snapshot', () => {
@@ -30,7 +38,6 @@ describe('ItemTextField', () => {
         id={2}
       />
     )
-
     wrapper.instance().componentWillMount();
     expect(wrapper.state()).toEqual({
       text: 'hello',
@@ -48,50 +55,35 @@ describe('ItemTextField', () => {
 
   describe('sendListItem', () => {
     it('should update state if addListItem is part of props', () => {
-      let mockFn = jest.fn();
-      wrapper = shallow(
-        <ItemTextField
-          addListItem={mockFn}
-        />)
-
       wrapper.find('#item').simulate('blur');
       expect(mockFn).toHaveBeenCalled();
       expect(wrapper.state('text')).toEqual('');
     });
 
     it('should call updateItem addListItem is not a prop', () => {
-      let mockFn = jest.fn();
       wrapper = shallow(
         <ItemTextField
-          updateItem={mockFn}
-        />)
-
+          updateItem={mockFn} 
+        />); 
       wrapper.find('#item').simulate('blur');
       expect(mockFn).toHaveBeenCalled();
     });
   });
 
-  it.skip('should fire handleIsComplete on check', () => {
-    wrapper = shallow(
-      <ItemTextField
-        handleIsComplete={jest.fn()}
-      />)
+  it('should fire handleIsComplete on check', () => {
     const mockEvent = { target: { closest: () => (3) } }
-    wrapper.find('.checkbox').simulate('click', mockEvent)
-    expect(wrapper.props.handleIsComplete).toHaveBeenCalled()
+    wrapper.find('.checkbox').simulate('click', mockEvent);
+    expect(mockFn).toHaveBeenCalled();
   })
 
-  it.skip('should fire removeItem on button click', () => {
+  it('should fire removeItem on button click', () => {
+    wrapper.setState({text: 'text'});
     const mockEvent = { target: { closest: () => (3) } }
-    wrapper.find('.button').simulate('click', mockEvent)
+    wrapper.find('.button').simulate('click', mockEvent);
+    expect(mockFn).toHaveBeenCalled();
   })
 
-  it('should fire catchKey on keyDown', () => {
-    let mockFn = jest.fn();
-    wrapper = shallow(
-      <ItemTextField
-        updateItem={mockFn}
-      />)
+  it.skip('should fire catchKey on keyDown', () => {
     wrapper.instance().sendListItem = jest.fn()
     const mockedEvent = { keyCode: 13 }
     wrapper.find('#item').simulate('keyDown', mockedEvent);

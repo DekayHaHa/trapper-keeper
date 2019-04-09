@@ -1,11 +1,11 @@
 .header-container {
-    background-color: #9445FF;
+    background-color: #cfabff;
     display: flex;
     font-family: $headerFont;
     justify-content: flex-start;
     padding: 20px;
     margin-bottom: 25px;
-
+    box-shadow: 0px 0px 6px 0px #5d5d5d;
     .link-style {
         text-decoration: none;
     }
