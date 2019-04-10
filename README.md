@@ -5,14 +5,22 @@ A Google Keep look-a-like for tracking tasks and their completion.
 - Liz Asbell - [GitHub]() - [LinkedIn]()
 - Isaac Sunoo - [GitHub]() - [LinkedIn]()
 
+## Tech Stack
+- Scss
+- React
+- Redux
+- React Router
+- Material UI
+- Jest & Enzyme
+- Node.js (Express)
+- Super Test
+
 ## Install Instructions
 - Click [here](https://github.com/IsaacSunoo/trapper-keeper-api)! Clone down backend
 - NPM install for backend
 - Clone down THIS repo
 - NPM install for frontend
 - NPM Start backend and then the frontend
-
-## Team Notes
 
 ## WireFrame
 <img width="845" alt="Screen Shot 2019-04-09 at 6 15 00 PM" src="https://user-images.githubusercontent.com/23220813/55843105-c9297180-5af3-11e9-9dce-48b9f4bd3f87.png">
