@@ -16,7 +16,7 @@ export class NoteCard extends Component {
                 <Card className={classes.card}>
                     <Link to='/' className={classes.delete}>
                         <Tooltip title='Delete Note'>
-                            <IconButton onClick={() => deleteNote(note.id)}>
+                            <IconButton className='icon-btn'onClick={() => deleteNote(note.id)}>
                                 <Icon>delete</Icon>
                             </IconButton>
                         </Tooltip>

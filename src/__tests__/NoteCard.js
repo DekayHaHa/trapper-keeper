@@ -24,8 +24,8 @@ describe('NoteCard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should invoke deleteNote on removeNote', () => {
-    wrapper.instance().removeNote();
+  it('should invoke deleteNote on removeNote', () => {
+    wrapper.find('.icon-btn').simulate('click');
     expect(mockFn).toHaveBeenCalled();
   });
 
