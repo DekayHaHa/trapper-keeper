@@ -85,47 +85,15 @@ export class CreateNote extends Component {
         this.setState({ itemsList: newList });
     }
 
-    addNewInput = (e) => {
-        // if (0 === parseInt(this.getInputId(e))) {
-        //     console.log('entered add new input');
-        //     this.addNewTextField();
-        // }
-    }
-
-    addNewTextField = () => {
-        // return (<ItemTextField autofocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem} key={Date.now()} addNewInput={this.addNewInput} />)
-    }
-
-    getInputId = e => {
-        // const { id } = e.target.closest('label');
-        // console.log(id)
-        // return id;
-    }
     renderItems = (bool) => {
         const { itemsList } = this.state;
         const itemsToRender = itemsList.filter(item => item.isComplete === bool)
-        console.log(itemsToRender)
         return [...itemsToRender.map(item => {
             return (
                 <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} addNewInput={this.addNewInput} />
             )
         })]
     }
-
-    // renderItems = () => {
-    //     const { itemsList } = this.state;
-    //     const completeItems = itemsList.filter(item => item.isComplete === true);
-    //     const incompleteItems = itemsList.filter(item => item.isComplete === false);
-    //     return [...incompleteItems.map(item => {
-    //         return (
-    //             <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} addNewInput={this.addNewInput} />
-    //         )
-    //     }),
-    //     <ItemTextField autoFocus addListItem={this.addListItem} handleIsComplete={this.handleIsComplete} removeItem={this.removeItem} key={Date.now()} addNewInput={this.addNewInput} />,
-    //     ...completeItems.map(item => {
-    //         return <ItemTextField key={item.id} {...item} handleIsComplete={this.handleIsComplete} updateItem={this.updateItem} removeItem={this.removeItem} completeItems={completeItems} inCompleteItems={incompleteItems} addNewInput={this.addNewInput} />
-    //     })]
-    // };
 
     handleClickOpen = () => {
         this.setState({ open: true });
