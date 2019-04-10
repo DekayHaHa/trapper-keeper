@@ -57,7 +57,7 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "b6682d43-481f-4f32-a25e-a4fcd073030d",
+        "key": "8a7125be-4898-4c62-b3c6-c15c6cddb8f8",
         "nodeType": "class",
         "props": Object {
           "children": <WithStyles(Connect(NoteCard))
@@ -87,7 +87,7 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": "11add510-007c-411d-bc9b-e3c085807557",
+        "key": "fe5064dd-feb0-4326-aaab-368df8828c9b",
         "nodeType": "class",
         "props": Object {
           "children": <WithStyles(Connect(NoteCard))
@@ -156,7 +156,7 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "b6682d43-481f-4f32-a25e-a4fcd073030d",
+          "key": "8a7125be-4898-4c62-b3c6-c15c6cddb8f8",
           "nodeType": "class",
           "props": Object {
             "children": <WithStyles(Connect(NoteCard))
@@ -186,7 +186,7 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": "11add510-007c-411d-bc9b-e3c085807557",
+          "key": "fe5064dd-feb0-4326-aaab-368df8828c9b",
           "nodeType": "class",
           "props": Object {
             "children": <WithStyles(Connect(NoteCard))

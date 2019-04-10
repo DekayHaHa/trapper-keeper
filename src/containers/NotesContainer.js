@@ -21,6 +21,7 @@ export class NotesContainer extends Component {
     )
   }
 }
+
 NotesContainer.propTypes = {
   notes: PropTypes.array,
   error: PropTypes.string

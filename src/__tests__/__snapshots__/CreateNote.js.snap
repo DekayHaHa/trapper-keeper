@@ -61,8 +61,7 @@ ShallowWrapper {
             />
             <ItemTextField
               addListItem={[Function]}
-              addNewInput={[Function]}
-              autofocus={true}
+              autoFocus={true}
               handleIsComplete={[Function]}
               removeItem={[Function]}
             />
@@ -163,8 +162,7 @@ ShallowWrapper {
               />
               <ItemTextField
                 addListItem={[Function]}
-                addNewInput={[Function]}
-                autofocus={true}
+                autoFocus={true}
                 handleIsComplete={[Function]}
                 removeItem={[Function]}
               />
@@ -214,15 +212,14 @@ ShallowWrapper {
                   value=""
                   variant="standard"
                 />,
-                Array [
-                  <ItemTextField
-                    addListItem={[Function]}
-                    addNewInput={[Function]}
-                    autofocus={true}
-                    handleIsComplete={[Function]}
-                    removeItem={[Function]}
-                  />,
-                ],
+                Array [],
+                <ItemTextField
+                  addListItem={[Function]}
+                  autoFocus={true}
+                  handleIsComplete={[Function]}
+                  removeItem={[Function]}
+                />,
+                Array [],
               ],
             },
             "ref": null,
@@ -250,12 +247,12 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "1554847576258"
+                "key": "1554863486805",
                 "nodeType": "class",
                 "props": Object {
                   "addListItem": [Function],
-                  "addNewInput": [Function],
-                  "autofocus": true,
+                  "addNewInput": undefined,
+                  "autoFocus": true,
                   "handleIsComplete": [Function],
                   "removeItem": [Function],
                 },
@@ -395,8 +392,7 @@ ShallowWrapper {
               />
               <ItemTextField
                 addListItem={[Function]}
-                addNewInput={[Function]}
-                autofocus={true}
+                autoFocus={true}
                 handleIsComplete={[Function]}
                 removeItem={[Function]}
               />
@@ -497,8 +493,7 @@ ShallowWrapper {
                 />
                 <ItemTextField
                   addListItem={[Function]}
-                  addNewInput={[Function]}
-                  autofocus={true}
+                  autoFocus={true}
                   handleIsComplete={[Function]}
                   removeItem={[Function]}
                 />
@@ -548,15 +543,14 @@ ShallowWrapper {
                     value=""
                     variant="standard"
                   />,
-                  Array [
-                    <ItemTextField
-                      addListItem={[Function]}
-                      addNewInput={[Function]}
-                      autofocus={true}
-                      handleIsComplete={[Function]}
-                      removeItem={[Function]}
-                    />,
-                  ],
+                  Array [],
+                  <ItemTextField
+                    addListItem={[Function]}
+                    autoFocus={true}
+                    handleIsComplete={[Function]}
+                    removeItem={[Function]}
+                  />,
+                  Array [],
                 ],
               },
               "ref": null,
@@ -584,12 +578,12 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "1554847576258",
+                  "key": "1554863486805",
                   "nodeType": "class",
                   "props": Object {
                     "addListItem": [Function],
-                    "addNewInput": [Function],
-                    "autofocus": true,
+                    "addNewInput": undefined,
+                    "autoFocus": true,
                     "handleIsComplete": [Function],
                     "removeItem": [Function],
                   },

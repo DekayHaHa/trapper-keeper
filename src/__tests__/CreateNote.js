@@ -3,7 +3,6 @@ import { CreateNote, mapDispatchToProps } from '../containers/CreateNote';
 import { addNote } from '../thunks/addNote';
 import { changeNote } from '../thunks/changeNote';
 import { shallow } from 'enzyme';
-import { ItemTextField } from '../containers/ItemTextField';
 import { Redirect } from 'react-router-dom'
 
 jest.mock('../thunks/addNote');
@@ -113,6 +112,17 @@ describe('', () => {
 		])
 	})
 
+	it.skip('should set state when handleClickOpen is fired', () => {
+		wrapper.find('.add-note-btn').simulate('click');
+		expect(wrapper.state('open')).toBe(true);
+	});
+
+	it('should set state when handleClickOpen is fired', () => {
+		wrapper.find('.dialog-box').simulate('close');
+		expect(wrapper.state('open')).toBe(false);
+		expect(wrapper.state('redirect')).toBe(true);
+	});
+
 	it('should redirect after saving note', () => {
 		wrapper.setState({ redirect: true })
 		const result = wrapper.instance().checkRedirect()
@@ -140,6 +150,16 @@ describe('', () => {
 
 			const mappedProps = mapDispatchToProps(mockDispatch);
 			mappedProps.addNote(mockItem);
+			expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+		});
+
+		it('calls dispatch with a changeNote action', async () => {
+			const mockDispatch = jest.fn();
+			const mockNote = { title: "title", itemsList: [] }
+			const actionToDispatch = changeNote(mockNote);
+
+			const mappedProps = mapDispatchToProps(mockDispatch);
+			mappedProps.changeNote(mockNote);
 			expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
 		});
 	});

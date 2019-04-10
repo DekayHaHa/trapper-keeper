@@ -40,6 +40,7 @@ ShallowWrapper {
             title="Delete Note"
           >
             <WithStyles(IconButton)
+              className="icon-btn"
               onClick={[Function]}
             >
               <WithStyles(Icon)>
@@ -67,6 +68,7 @@ ShallowWrapper {
         </Link>
       </WithStyles(Card)>,
       "enterDelay": 500,
+      "id": undefined,
       "placement": "bottom",
       "title": "Edit Note",
     },
@@ -84,6 +86,7 @@ ShallowWrapper {
               title="Delete Note"
             >
               <WithStyles(IconButton)
+                className="icon-btn"
                 onClick={[Function]}
               >
                 <WithStyles(Icon)>
@@ -123,6 +126,7 @@ ShallowWrapper {
               title="Delete Note"
             >
               <WithStyles(IconButton)
+                className="icon-btn"
                 onClick={[Function]}
               >
                 <WithStyles(Icon)>
@@ -140,6 +144,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": <WithStyles(IconButton)
+                className="icon-btn"
                 onClick={[Function]}
               >
                 <WithStyles(Icon)>
@@ -157,6 +162,7 @@ ShallowWrapper {
                 "children": <WithStyles(Icon)>
                   delete
                 </WithStyles(Icon)>,
+                "className": "icon-btn",
                 "onClick": [Function],
               },
               "ref": null,
@@ -271,6 +277,7 @@ ShallowWrapper {
               title="Delete Note"
             >
               <WithStyles(IconButton)
+                className="icon-btn"
                 onClick={[Function]}
               >
                 <WithStyles(Icon)>
@@ -298,6 +305,7 @@ ShallowWrapper {
           </Link>
         </WithStyles(Card)>,
         "enterDelay": 500,
+        "id": undefined,
         "placement": "bottom",
         "title": "Edit Note",
       },
@@ -315,6 +323,7 @@ ShallowWrapper {
                 title="Delete Note"
               >
                 <WithStyles(IconButton)
+                  className="icon-btn"
                   onClick={[Function]}
                 >
                   <WithStyles(Icon)>
@@ -354,6 +363,7 @@ ShallowWrapper {
                 title="Delete Note"
               >
                 <WithStyles(IconButton)
+                  className="icon-btn"
                   onClick={[Function]}
                 >
                   <WithStyles(Icon)>
@@ -371,6 +381,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": <WithStyles(IconButton)
+                  className="icon-btn"
                   onClick={[Function]}
                 >
                   <WithStyles(Icon)>
@@ -388,6 +399,7 @@ ShallowWrapper {
                   "children": <WithStyles(Icon)>
                     delete
                   </WithStyles(Icon)>,
+                  "className": "icon-btn",
                   "onClick": [Function],
                 },
                 "ref": null,
