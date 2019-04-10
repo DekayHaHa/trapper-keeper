@@ -67,6 +67,7 @@ ShallowWrapper {
         </Link>
       </WithStyles(Card)>,
       "enterDelay": 500,
+      "id": undefined,
       "placement": "bottom",
       "title": "Edit Note",
     },
@@ -298,6 +299,7 @@ ShallowWrapper {
           </Link>
         </WithStyles(Card)>,
         "enterDelay": 500,
+        "id": undefined,
         "placement": "bottom",
         "title": "Edit Note",
       },

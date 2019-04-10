@@ -34,6 +34,7 @@ export class NoteCard extends Component {
         )
     }
 }
+
 NoteCard.propTypes = {
     note: PropTypes.object,
     classes: PropTypes.object,

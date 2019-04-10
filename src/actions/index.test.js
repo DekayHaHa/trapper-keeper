@@ -13,7 +13,7 @@ describe('actions', () => {
         notes: mockNotes
       }
       const result = actions.setNotes(mockNotes);
-      expect(result).toEqual(expected)
+      expect(result).toEqual(expected);
     });
   });
 
@@ -25,7 +25,7 @@ describe('actions', () => {
         message: mockError
       }
       const result = actions.hasError(mockError);
-      expect(result).toEqual(expected)
+      expect(result).toEqual(expected);
     });
   });
 
@@ -33,40 +33,38 @@ describe('actions', () => {
     it('should return and object with EDIT_NOTE and the note', () => {
       const mockNote = { id: 2, title: 'title', itemsList: ['items'] }
       const expected = { type: 'EDIT_NOTE', note: mockNote }
-      const results = actions.editNote(mockNote)
-      expect(results).toEqual(expected)
-    })
-  })
+      const results = actions.editNote(mockNote);
+      expect(results).toEqual(expected);
+    });
+  });
 
   describe('removeNote', () => {
     it('should return and object with REMOVE_NOTE and the note id', () => {
       const expected = { type: 'REMOVE_NOTE', id: 2 }
-      const results = actions.removeNote(2)
-      expect(results).toEqual(expected)
-    })
-  })
+      const results = actions.removeNote(2);
+      expect(results).toEqual(expected);
+    });
+  });
 
   describe('setLoading', () => {
     it('should return and object with SET_LOADING and isLoading = true', () => {
       const expected = { type: 'SET_LOADING', isLoading: true }
-      const results = actions.setLoading(true)
-      expect(results).toEqual(expected)
+      const results = actions.setLoading(true);
+      expect(results).toEqual(expected);
     })
     it('should return and object with SET_LOADING and isLoading = false', () => {
       const expected = { type: 'SET_LOADING', isLoading: false }
-      const results = actions.setLoading(false)
-      expect(results).toEqual(expected)
-    })
-  })
+      const results = actions.setLoading(false);
+      expect(results).toEqual(expected);
+    });
+  });
 
   describe('newNote', () => {
     it('should return and object with NEW_NOTE and the note', () => {
       const mockNote = { id: 2, title: 'title', itemsList: ['items'] }
       const expected = { type: 'NEW_NOTE', newNote: mockNote }
-      const results = actions.newNote(mockNote)
-      expect(results).toEqual(expected)
-    })
-  })
-
-
+      const results = actions.newNote(mockNote);
+      expect(results).toEqual(expected);
+    });
+  });
 });
