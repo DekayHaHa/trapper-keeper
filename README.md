@@ -2,7 +2,7 @@
 A Google Keep look-a-like for tracking tasks and their completion.
 ### Team:
 - Devin Kapla - [GitHub](https://github.com/DekayHaHa) - [LinkedIn](https://www.linkedin.com/in/devinkapla/)
-- Liz Asbell - [GitHub]() - [LinkedIn]()
+- Liz Asbell - [GitHub](https://github.com/easbell) - [LinkedIn](https://www.linkedin.com/in/easbell/)
 - Isaac Sunoo - [GitHub]() - [LinkedIn]()
 
 ## Tech Stack
