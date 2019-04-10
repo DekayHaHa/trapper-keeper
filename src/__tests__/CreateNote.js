@@ -3,7 +3,6 @@ import { CreateNote, mapDispatchToProps } from '../containers/CreateNote';
 import { addNote } from '../thunks/addNote';
 import { changeNote } from '../thunks/changeNote';
 import { shallow } from 'enzyme';
-import { ItemTextField } from '../containers/ItemTextField';
 import { Redirect } from 'react-router-dom'
 
 jest.mock('../thunks/addNote');
